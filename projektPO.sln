@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30320.27
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "projektPO", "projektPO.csproj", "{906F61C7-91D4-496E-8AA1-6D3651B58526}"
 EndProject
-Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "db_projektPO", "..\db_projektPO\db_projektPO.sqlproj", "{E57BC229-C019-48AA-939B-473136182344}"
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "db_projektPO", "db_projektPO\db_projektPO.sqlproj", "{E57BC229-C019-48AA-939B-473136182344}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
