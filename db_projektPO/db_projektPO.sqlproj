@@ -60,7 +60,13 @@
     <Folder Include="Tables" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="StoredProcedures\Procedure1.sql" />
+    <Build Include="StoredProcedures\ProcEmployeeInsert.sql" />
     <Build Include="Tables\Employee.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="db_projektPO.refactorlog" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="db_projektPO.publish.xml" />
   </ItemGroup>
 </Project>

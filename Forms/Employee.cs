@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace projektPO
+namespace projektPO.Forms
 {
-    public partial class Form1 : Form
+    public partial class Employee : Form
     {
-        public Form1()
+        public Employee()
         {
             InitializeComponent();
         }
