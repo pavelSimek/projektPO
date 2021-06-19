@@ -1,12 +1,5 @@
 ﻿using projektPO.Services;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using projektPO.Forms;
 using System.Windows.Forms;
 
 namespace projektPO
@@ -16,14 +9,8 @@ namespace projektPO
         public MainForm()
         {
             InitializeComponent();
-            var x = new DbService() { };
-            x.EmployeeInsert(new Models.EmployeeModel()
-            {
-                FirstName = "test",
-                PhdStudent = false
-            }
-            );
-
+            var Employee = new Employees();
+            Employee.Show();
         }
     }
 }

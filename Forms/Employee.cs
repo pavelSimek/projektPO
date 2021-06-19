@@ -12,7 +12,7 @@ namespace projektPO.Forms
 {
     public partial class Employee : Form
     {
-        public Employee()
+        public Employee(Models.Employee employee)
         {
             InitializeComponent();
         }
