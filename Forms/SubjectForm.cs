@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace projektPO.Forms
 {
-    public partial class Employee : Form
+    public partial class SubjectForm : Form
     {
-        public Employee(Models.Employee employee)
+        public SubjectForm()
         {
             InitializeComponent();
         }

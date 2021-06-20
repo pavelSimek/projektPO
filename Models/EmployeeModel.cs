@@ -18,9 +18,8 @@ namespace projektPO.Models
         public string WorkEmail { get; set; }
         public string PersonalEmail { get; set; }
         public string Phone { get; set; }
+        public string PersonalPhone { get; set; }
         public double WorkingTime { get; set; }
-        public int WorkingPoints { get; set; }
-        public int WorkingPointsEN { get; set; }
         public bool PhdStudent { get; set; }
     }
 }

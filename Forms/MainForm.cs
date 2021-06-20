@@ -9,8 +9,18 @@ namespace projektPO
         public MainForm()
         {
             InitializeComponent();
-            var Employee = new Employees();
-            Employee.Show();
+        }
+
+        private void bEmployee_Click(object sender, System.EventArgs e)
+        {
+            var form = new Employees();
+            form.Show();
+        }
+
+        private void bSubject_Click(object sender, System.EventArgs e)
+        {
+            var form = new SubjectForm();
+            form.Show();
         }
     }
 }

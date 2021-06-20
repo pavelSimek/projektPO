@@ -33,5 +33,19 @@ namespace projektPO.Services
                 return db.Query<Employee>("dbo.ProcEmployees", commandType: CommandType.StoredProcedure).ToList();
             }
         }
+        public static void EmployeeUpdate(Employee employee)
+        {
+            using (var db = OpenSqlConnection())
+            {
+                db.Query<Employee>("dbo.ProcEmployeeUpdate", employee, commandType: CommandType.StoredProcedure);
+            }
+        }
+        public static void EmployeeDelete(int Id)
+        {
+            using (var db = OpenSqlConnection())
+            {
+                db.Query<Employee>("dbo.ProcEmployeeDelete", new { Id }, commandType: CommandType.StoredProcedure);
+            }
+        }
     }
 }

@@ -8,7 +8,6 @@
     [Phone] NCHAR(9) NULL, 
     [WorkEmail] NCHAR(250) NULL, 
     [WorkingTime] DECIMAL(2) NULL, 
-    [WorkingPoints] INT NULL, 
-    [WorkingPointsEN] INT NULL, 
-    [PhdStudent] BIT NULL
+    [PhdStudent] BIT NULL, 
+    [PersonalPhone] NCHAR(9) NULL
 )
