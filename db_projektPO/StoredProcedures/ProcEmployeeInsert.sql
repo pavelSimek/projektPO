@@ -6,7 +6,7 @@
 	@Phone nchar(9),
 	@PersonalPhone nchar(9),
     @WorkEmail NCHAR(250) NULL, 
-    @WorkingTime DECIMAL(2) NULL, 
+    @WorkingTime DECIMAL(10,2) NULL, 
     @PhdStudent BIT NULL,
 	@Id INT
 

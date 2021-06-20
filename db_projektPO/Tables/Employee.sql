@@ -1,13 +1,13 @@
 ﻿CREATE TABLE [dbo].[Employee]
 (
 	[Id] INT NOT NULL IDENTITY PRIMARY KEY, 
-    [FirstName] NCHAR(100) NULL, 
-    [LastName] NCHAR(100) NULL, 
-    [PartyCode] NCHAR(10) NULL, 
-    [PersonalEmail] NCHAR(250) NULL, 
-    [Phone] NCHAR(9) NULL, 
-    [WorkEmail] NCHAR(250) NULL, 
-    [WorkingTime] DECIMAL(2) NULL, 
+    [FirstName] NVARCHAR(100) NULL, 
+    [LastName] NVARCHAR(100) NULL, 
+    [PartyCode] NVARCHAR(10) NULL, 
+    [PersonalEmail] NVARCHAR(250) NULL, 
+    [Phone] NVARCHAR(9) NULL, 
+    [WorkEmail] NVARCHAR(250) NULL, 
+    [WorkingTime] DECIMAL(10, 2) NULL, 
     [PhdStudent] BIT NULL, 
-    [PersonalPhone] NCHAR(9) NULL
+    [PersonalPhone] NVARCHAR(9) NULL
 )

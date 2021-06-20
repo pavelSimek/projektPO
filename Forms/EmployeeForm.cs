@@ -29,7 +29,7 @@ namespace projektPO.Forms
             tbPersonalPhone.Text = _employee.PersonalPhone;
             tbWorkMail.Text = _employee.WorkEmail;
             tbWorkPhone.Text = _employee.Phone;
-            nWorkTime.Value = (decimal)_employee.WorkingTime;
+            nWorkTime.Value = Convert.ToDecimal(_employee.WorkingTime);
             cbPhdStudent.Checked = _employee.PhdStudent;
         }
 
@@ -75,7 +75,7 @@ namespace projektPO.Forms
             _employee.PersonalPhone = tbPersonalPhone.Text;
             _employee.WorkEmail = tbWorkMail.Text;
             _employee.Phone = tbWorkPhone.Text;
-            _employee.WorkingTime = (double)nWorkTime.Value;
+            _employee.WorkingTime = Convert.ToDouble(nWorkTime.Value.ToString());
             _employee.PhdStudent = cbPhdStudent.Checked;
         }
 

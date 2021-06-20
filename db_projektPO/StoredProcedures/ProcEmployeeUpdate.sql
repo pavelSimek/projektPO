@@ -7,7 +7,7 @@
 	@Phone nchar(9),
     @WorkEmail NCHAR(250) NULL, 
 	@PersonalPhone NCHAR(9),
-    @WorkingTime DECIMAL(2) NULL, 
+    @WorkingTime DECIMAL(10,2) NULL, 
     @PhdStudent BIT NULL
 AS
 	UPDATE Employee SET
@@ -19,5 +19,5 @@ AS
     WorkEmail = @WorkEmail, 
     WorkingTime = @WorkingTime, 
     PhdStudent = @PhdStudent,
-	PersonalPhone = @WorkingTime
+	PersonalPhone = @PersonalPhone
 	WHERE Id = @Id
