@@ -67,14 +67,28 @@
     <Compile Include="Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ScheduleEventsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ScheduleEventsForm.Designer.cs">
+      <DependentUpon>ScheduleEventsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\SubjectForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\SubjectForm.Designer.cs">
       <DependentUpon>SubjectForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\SubjectsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SubjectsForm.Designer.cs">
+      <DependentUpon>SubjectsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeDTOModel.cs" />
     <Compile Include="Models\EmployeeModel.cs" />
     <Compile Include="Models\Enums.cs" />
+    <Compile Include="Models\Institute.cs" />
     <Compile Include="Models\ScheduleEvent.cs" />
     <Compile Include="Models\StudyGroup.cs" />
     <Compile Include="Models\SubjectModel.cs" />
@@ -90,8 +104,14 @@
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ScheduleEventsForm.resx">
+      <DependentUpon>ScheduleEventsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\SubjectForm.resx">
       <DependentUpon>SubjectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SubjectsForm.resx">
+      <DependentUpon>SubjectsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

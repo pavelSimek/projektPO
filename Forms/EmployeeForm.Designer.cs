@@ -66,6 +66,7 @@ namespace projektPO.Forms
             // tbFirstName
             // 
             this.tbFirstName.Location = new System.Drawing.Point(29, 117);
+            this.tbFirstName.MaxLength = 10;
             this.tbFirstName.Name = "tbFirstName";
             this.tbFirstName.Size = new System.Drawing.Size(100, 20);
             this.tbFirstName.TabIndex = 1;
@@ -73,6 +74,7 @@ namespace projektPO.Forms
             // tbLastName
             // 
             this.tbLastName.Location = new System.Drawing.Point(29, 143);
+            this.tbLastName.MaxLength = 10;
             this.tbLastName.Name = "tbLastName";
             this.tbLastName.Size = new System.Drawing.Size(100, 20);
             this.tbLastName.TabIndex = 2;
@@ -80,6 +82,7 @@ namespace projektPO.Forms
             // tbPartyCode
             // 
             this.tbPartyCode.Location = new System.Drawing.Point(29, 169);
+            this.tbPartyCode.MaxLength = 10;
             this.tbPartyCode.Name = "tbPartyCode";
             this.tbPartyCode.Size = new System.Drawing.Size(100, 20);
             this.tbPartyCode.TabIndex = 3;
@@ -87,6 +90,7 @@ namespace projektPO.Forms
             // tbWorkMail
             // 
             this.tbWorkMail.Location = new System.Drawing.Point(29, 195);
+            this.tbWorkMail.MaxLength = 250;
             this.tbWorkMail.Name = "tbWorkMail";
             this.tbWorkMail.Size = new System.Drawing.Size(100, 20);
             this.tbWorkMail.TabIndex = 4;
@@ -94,6 +98,7 @@ namespace projektPO.Forms
             // tbPersonalEmail
             // 
             this.tbPersonalEmail.Location = new System.Drawing.Point(282, 117);
+            this.tbPersonalEmail.MaxLength = 250;
             this.tbPersonalEmail.Name = "tbPersonalEmail";
             this.tbPersonalEmail.Size = new System.Drawing.Size(100, 20);
             this.tbPersonalEmail.TabIndex = 5;
@@ -101,6 +106,7 @@ namespace projektPO.Forms
             // tbPersonalPhone
             // 
             this.tbPersonalPhone.Location = new System.Drawing.Point(282, 169);
+            this.tbPersonalPhone.MaxLength = 9;
             this.tbPersonalPhone.Name = "tbPersonalPhone";
             this.tbPersonalPhone.Size = new System.Drawing.Size(100, 20);
             this.tbPersonalPhone.TabIndex = 6;
@@ -171,6 +177,7 @@ namespace projektPO.Forms
             // tbWorkPhone
             // 
             this.tbWorkPhone.Location = new System.Drawing.Point(282, 143);
+            this.tbWorkPhone.MaxLength = 9;
             this.tbWorkPhone.Name = "tbWorkPhone";
             this.tbWorkPhone.Size = new System.Drawing.Size(100, 20);
             this.tbWorkPhone.TabIndex = 13;

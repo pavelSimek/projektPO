@@ -7,9 +7,9 @@ namespace projektPO.Forms
 {
     public partial class EmployeeForm : Form
     {
-        private Employee _employee = new Employee();
+        private EmployeeDTOModel _employee = new EmployeeDTOModel();
         private Employees _parentForm;
-        public EmployeeForm(Employee employee, Employees parentForm)
+        public EmployeeForm(EmployeeDTOModel employee, Employees parentForm)
         {
             InitializeComponent();
             _employee = employee;
@@ -31,6 +31,7 @@ namespace projektPO.Forms
             tbWorkPhone.Text = _employee.Phone;
             nWorkTime.Value = Convert.ToDecimal(_employee.WorkingTime);
             cbPhdStudent.Checked = _employee.PhdStudent;
+            bAdd.Text = "Uložit";
         }
 
         private void bClear_Click(object sender, EventArgs e)
@@ -66,7 +67,7 @@ namespace projektPO.Forms
         {
             if (_employee == null)
             {
-                _employee = new Employee();
+                _employee = new EmployeeDTOModel();
             }
             _employee.FirstName = tbFirstName.Text;
             _employee.LastName = tbLastName.Text;

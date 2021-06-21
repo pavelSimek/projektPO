@@ -1,5 +1,4 @@
-﻿using projektPO.Services;
-using projektPO.Forms;
+﻿using projektPO.Forms;
 using System.Windows.Forms;
 
 namespace projektPO
@@ -19,7 +18,7 @@ namespace projektPO
 
         private void bSubject_Click(object sender, System.EventArgs e)
         {
-            var form = new SubjectForm();
+            var form = new SubjectsForm();
             form.Show();
         }
     }

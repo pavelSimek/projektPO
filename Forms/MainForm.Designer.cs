@@ -89,9 +89,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.Location = new System.Drawing.Point(620, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(134, 42);
+            this.label1.Size = new System.Drawing.Size(137, 42);
             this.label1.TabIndex = 5;
-            this.label1.Text = "Přidání";
+            this.label1.Text = "Úpravy";
             // 
             // MainForm
             // 

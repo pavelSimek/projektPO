@@ -18,11 +18,6 @@ namespace projektPO.Models
             CZ,
             EN
         }
-        public enum GuaranteeingInstitute
-        {
-            UIUI,
-            Other
-        }
         public enum Semester
         {
             LS,

@@ -1,11 +1,11 @@
 ﻿CREATE PROCEDURE [dbo].[ProcEmployeeInsert]
-	@FirstName nchar(100),
-	@LastName nchar(100),
-	@PartyCode nchar(10),
-	@PersonalEmail nchar(250),
-	@Phone nchar(9),
-	@PersonalPhone nchar(9),
-    @WorkEmail NCHAR(250) NULL, 
+	@FirstName nvarchar(100),
+	@LastName nvarchar(100),
+	@PartyCode nvarchar(10),
+	@PersonalEmail nvarchar(250),
+	@Phone nvarchar(9),
+	@PersonalPhone nvarchar(9),
+    @WorkEmail nvarchar(250) NULL, 
     @WorkingTime DECIMAL(10,2) NULL, 
     @PhdStudent BIT NULL,
 	@Id INT

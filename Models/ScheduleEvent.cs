@@ -10,18 +10,17 @@ namespace projektPO.Models
     public class ScheduleEvent
     {
         public string Name { get; set; }
-        public EmployeeModel Employee  { get; set; }
+        public EmployeeDTOModel Employee  { get; set; }
         public SubjectModel Subject { get; set; }
         public int NumberOfStudents { get; set; }
         public ScheduleEventType ScheduleEventType { get; set; }
         public int Hours { get; set; }
         public int Weeks { get; set; }
         public Language Language { get; set; }
+        public double PointsPerEvent()
+        {
+            double x = 0;
+            return x;
+        }
     }
-
-    /*public double PointsPerEvent()
-    {
-        double x = 0;
-        return x;
-    }*/
 }

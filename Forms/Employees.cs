@@ -7,7 +7,7 @@ namespace projektPO.Forms
 {
     public partial class Employees : Form
     {
-        private List<Employee> employees = new List<Employee>();
+        private List<EmployeeDTOModel> employees = new List<EmployeeDTOModel>();
         public Employees()
         {
             InitializeComponent();
@@ -30,7 +30,7 @@ namespace projektPO.Forms
 
         private void dgEmployees_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            var employee = (Models.Employee)dgEmployees.Rows[dgEmployees.CurrentCell.RowIndex].DataBoundItem;
+            var employee = (EmployeeDTOModel)dgEmployees.Rows[dgEmployees.CurrentCell.RowIndex].DataBoundItem;
             var form = new EmployeeForm(employee, this);
             form.Show();
             employees = DbService.Employees();
