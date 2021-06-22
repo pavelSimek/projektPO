@@ -277,6 +277,7 @@ namespace projektPO.Forms
             this.Controls.Add(this.lEmployee);
             this.Name = "EmployeeForm";
             this.Text = "Zaměstnanec";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EmployeeForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.nWorkTime)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

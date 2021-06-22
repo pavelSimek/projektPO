@@ -9,7 +9,7 @@
     @Language nvarchar(5), 
     @ClassSize INT, 
     @Credits INT,
-	@GuaranteeingInstitute INT,
+	@GuaranteeingInstitute nvarchar(10),
 	@GuarantorName nvarchar(200),
 	@Weeks INT
 

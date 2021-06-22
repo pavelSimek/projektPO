@@ -10,7 +10,7 @@
     [Language] NVARCHAR(5) NULL, 
     [ClassSize] INT NULL, 
     [Credits] INT NULL, 
-    [GuaranteeingInstitute] INT NULL, 
+    [GuaranteeingInstitute] NVARCHAR(10) NULL, 
     [GuarantorName] NVARCHAR(200) NULL, 
     [Weeks] NCHAR(10) NULL
 )

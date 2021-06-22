@@ -71,7 +71,7 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(188, 46);
             this.button4.TabIndex = 3;
-            this.button4.Text = "button4";
+            this.button4.Text = "Rozvrhové akce";
             this.button4.UseVisualStyleBackColor = true;
             // 
             // button5

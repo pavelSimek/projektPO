@@ -71,9 +71,21 @@
     <Build Include="StoredProcedures\ProcSubjectUpdate.sql" />
     <Build Include="Tables\Institute.sql" />
     <Build Include="StoredProcedures\ProcInstitutes.sql" />
-  </ItemGroup>
-  <ItemGroup>
-    <RefactorLog Include="db_projektPO.refactorlog" />
+    <Build Include="Tables\StudyGroup.sql" />
+    <Build Include="Tables\Event.sql" />
+    <Build Include="Tables\SubjectStudyGroup.sql" />
+    <Build Include="StoredProcedures\ProcSubjects.sql" />
+    <Build Include="StoredProcedures\ProcEventInsert.sql" />
+    <Build Include="StoredProcedures\ProcEventUpdate.sql" />
+    <Build Include="StoredProcedures\ProcEventDelete.sql" />
+    <Build Include="StoredProcedures\ProcEvents.sql" />
+    <Build Include="StoredProcedures\ProcStudyGroups.sql" />
+    <Build Include="StoredProcedures\ProcStudyGroupInsert.sql" />
+    <Build Include="StoredProcedures\ProcStudyGroupUpdate.sql" />
+    <Build Include="StoredProcedures\ProcStudyGroupDelete.sql" />
+    <Build Include="StoredProcedures\ProcSubjectStudyGroupInsert.sql" />
+    <Build Include="StoredProcedures\ProcSubjectStudyGroupDelete.sql" />
+    <Build Include="StoredProcedures\ProcEmployeeExists.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="db_projektPO.publish.xml" />

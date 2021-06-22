@@ -1,6 +1,4 @@
-﻿using projektPO.Models;
-using projektPO.Services;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,13 +10,11 @@ using System.Windows.Forms;
 
 namespace projektPO.Forms
 {
-    public partial class ScheduleEventsForm : Form
+    public partial class EventForm : Form
     {
-        List<ScheduleEventModel> _events = new List<ScheduleEventModel>();
-        public ScheduleEventsForm()
+        public EventForm()
         {
             InitializeComponent();
-            _events = DbService.Events();
         }
 
         private void bAdd_Click(object sender, EventArgs e)
@@ -26,7 +22,12 @@ namespace projektPO.Forms
 
         }
 
-        private void dgEvents_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void bClear_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
         {
 
         }

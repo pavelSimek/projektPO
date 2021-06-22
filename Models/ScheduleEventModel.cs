@@ -7,11 +7,12 @@ using static projektPO.Models.Enums;
 
 namespace projektPO.Models
 {
-    public class ScheduleEvent
+    public class ScheduleEventModel
     {
+        public int Id { get; set; }
         public string Name { get; set; }
-        public EmployeeDTOModel Employee  { get; set; }
-        public SubjectModel Subject { get; set; }
+        public int EmployeeID { get; set; }
+        public int SubjectID { get; set; }
         public int NumberOfStudents { get; set; }
         public ScheduleEventType ScheduleEventType { get; set; }
         public int Hours { get; set; }

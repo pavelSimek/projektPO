@@ -7,7 +7,7 @@ namespace projektPO.Forms
 {
     public partial class Employees : Form
     {
-        private List<EmployeeDTOModel> employees = new List<EmployeeDTOModel>();
+        private List<EmployeeModel> employees = new List<EmployeeModel>();
         public Employees()
         {
             InitializeComponent();
@@ -28,23 +28,25 @@ namespace projektPO.Forms
             dgEmployees.Columns["WorkEmail"].HeaderText = "Pracovní mail";
         }
 
-        private void dgEmployees_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            var employee = (EmployeeDTOModel)dgEmployees.Rows[dgEmployees.CurrentCell.RowIndex].DataBoundItem;
-            var form = new EmployeeForm(employee, this);
-            form.Show();
-            employees = DbService.Employees();
-        }
-
         private void button1_Click(object sender, System.EventArgs e)
         {
             var form = new EmployeeForm(null, this);
             form.Show();
+            this.Hide();
         }
         public void RefreshEmployeesTable()
         {
             employees = DbService.Employees();
             dgEmployees.DataSource = employees;
+            dgEmployees.Refresh();
+        }
+
+        private void button2_Click(object sender, System.EventArgs e)
+        {
+            var employee = (EmployeeModel)dgEmployees.Rows[dgEmployees.CurrentCell.RowIndex].DataBoundItem;
+            var form = new EmployeeForm(employee, this);
+            form.Show();
+            this.Hide();
         }
     }
 }

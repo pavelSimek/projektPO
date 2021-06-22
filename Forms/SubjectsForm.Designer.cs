@@ -33,12 +33,13 @@ namespace projektPO.Forms
             this.bAdd = new System.Windows.Forms.Button();
             this.dgSubjects = new System.Windows.Forms.DataGridView();
             this.lEmployee = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgSubjects)).BeginInit();
             this.SuspendLayout();
             // 
             // bAdd
             // 
-            this.bAdd.Location = new System.Drawing.Point(383, 52);
+            this.bAdd.Location = new System.Drawing.Point(276, 52);
             this.bAdd.Name = "bAdd";
             this.bAdd.Size = new System.Drawing.Size(206, 45);
             this.bAdd.TabIndex = 6;
@@ -59,9 +60,8 @@ namespace projektPO.Forms
             this.dgSubjects.MultiSelect = false;
             this.dgSubjects.Name = "dgSubjects";
             this.dgSubjects.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgSubjects.Size = new System.Drawing.Size(610, 327);
+            this.dgSubjects.Size = new System.Drawing.Size(1250, 327);
             this.dgSubjects.TabIndex = 5;
-            this.dgSubjects.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgSubjects_CellContentClick);
             // 
             // lEmployee
             // 
@@ -73,11 +73,22 @@ namespace projektPO.Forms
             this.lEmployee.TabIndex = 4;
             this.lEmployee.Text = "Předměty";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(497, 52);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(206, 45);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Upravit předmět";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // SubjectsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(610, 450);
+            this.ClientSize = new System.Drawing.Size(1250, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.bAdd);
             this.Controls.Add(this.dgSubjects);
             this.Controls.Add(this.lEmployee);
@@ -95,5 +106,6 @@ namespace projektPO.Forms
         private System.Windows.Forms.Button bAdd;
         private System.Windows.Forms.DataGridView dgSubjects;
         private System.Windows.Forms.Label lEmployee;
+        private System.Windows.Forms.Button button1;
     }
 }

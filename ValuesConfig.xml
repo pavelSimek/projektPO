@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<WorkPointsValue>
+  <LectureHour>1.8</LectureHour>
+  <ExcerciseHour>1.2</ExcerciseHour>
+  <SeminarHour>1.2</SeminarHour>
+  <LectureHourEN>2.4</LectureHourEN>
+  <ExcerciseHourEN>1.8</ExcerciseHourEN>
+  <SeminarHourEN>1.8</SeminarHourEN>
+  <CreditGrant>0.2</CreditGrant>
+  <GradedCreditGrant>0.3</GradedCreditGrant>
+  <ExamGrant>0.4</ExamGrant>
+  <CreditGrantEN>0.2</CreditGrantEN>
+  <GradedCreditGrantEN>0.3</GradedCreditGrantEN>
+  <ExamGrantEN>0.4</ExamGrantEN>
+</WorkPointsValue>

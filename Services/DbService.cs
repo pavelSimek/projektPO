@@ -16,54 +16,64 @@ namespace projektPO.Services
 
         static private string GetConnectionString()
         {
-
             return "Server= localhost; Database= databasePO; Integrated Security=True;";
         }
+
         #region Employee
-        public static void EmployeeInsert(EmployeeDTOModel employeeModel)
+        public static void EmployeeInsert(EmployeeModel employeeModel)
         {
             using (var db = OpenSqlConnection())
             {
-                db.Query<EmployeeDTOModel>("dbo.ProcEmployeeInsert", employeeModel, commandType: CommandType.StoredProcedure);
+                db.Query<EmployeeModel>("dbo.ProcEmployeeInsert", employeeModel, commandType: CommandType.StoredProcedure);
             }
         }
-        public static List<EmployeeDTOModel> Employees()
+        public static List<EmployeeModel> Employees()
         {
             using (var db = OpenSqlConnection())
             {
-                return db.Query<EmployeeDTOModel>("dbo.ProcEmployees", commandType: CommandType.StoredProcedure).ToList();
+                return db.Query<EmployeeModel>("dbo.ProcEmployees", commandType: CommandType.StoredProcedure).ToList();
             }
         }
-        public static void EmployeeUpdate(EmployeeDTOModel employee)
+        public static void EmployeeUpdate(EmployeeModel employee)
         {
             using (var db = OpenSqlConnection())
             {
-                db.Query<EmployeeDTOModel>("dbo.ProcEmployeeUpdate", employee, commandType: CommandType.StoredProcedure);
+                db.Query<EmployeeModel>("dbo.ProcEmployeeUpdate", employee, commandType: CommandType.StoredProcedure);
             }
         }
         public static void EmployeeDelete(int Id)
         {
             using (var db = OpenSqlConnection())
             {
-                db.Query<EmployeeDTOModel>("dbo.ProcEmployeeDelete", new { Id }, commandType: CommandType.StoredProcedure);
+                db.Query<EmployeeModel>("dbo.ProcEmployeeDelete", new { Id }, commandType: CommandType.StoredProcedure);
             }
         }
-        #endregion
-        #region Institute
-        public static List<Institute> Institutes()
+
+        public static EmployeeModel EmployeeExists(string PartyCode, int Id)
         {
             using (var db = OpenSqlConnection())
             {
-                return db.Query<Institute>("dbo.ProcInstitutes", commandType: CommandType.StoredProcedure).ToList();
+                return db.Query<EmployeeModel>("dbo.ProcEmployeeExists", new { PartyCode, Id }, commandType: CommandType.StoredProcedure).FirstOrDefault();
+            }
+        }
+                #endregion
+
+                #region Institute
+                public static List<InstituteModel> Institutes()
+        {
+            using (var db = OpenSqlConnection())
+            {
+                return db.Query<InstituteModel>("dbo.ProcInstitutes", commandType: CommandType.StoredProcedure).ToList();
             }
         }
         #endregion
+
         #region Subject
         public static void SubjectInsert(SubjectModel subject)
         {
             using (var db = OpenSqlConnection())
             {
-                db.Query<EmployeeDTOModel>("dbo.ProcSubjectInsert", subject, commandType: CommandType.StoredProcedure);
+                db.Query<SubjectModel>("dbo.ProcSubjectInsert", subject, commandType: CommandType.StoredProcedure);
             }
         }
         public static List<SubjectModel> Subjects()
@@ -77,7 +87,7 @@ namespace projektPO.Services
         {
             using (var db = OpenSqlConnection())
             {
-                db.Query<EmployeeDTOModel>("dbo.ProcSubjectUpdate", subject, commandType: CommandType.StoredProcedure);
+                db.Query<SubjectModel>("dbo.ProcSubjectUpdate", subject, commandType: CommandType.StoredProcedure);
             }
         }
         public static void SubjectDelete(int Id)
@@ -87,6 +97,80 @@ namespace projektPO.Services
                 db.Query<SubjectModel>("dbo.ProcSubjectDelete", new { Id }, commandType: CommandType.StoredProcedure);
             }
         }
+        #endregion
+
+        #region Event
+        public static void EventInsert(SubjectModel subject)
+        {
+            using (var db = OpenSqlConnection())
+            {
+                db.Query<EmployeeModel>("dbo.ProcEventInsert", subject, commandType: CommandType.StoredProcedure);
+            }
+        }
+        public static List<ScheduleEventModel> Events()
+        {
+            using (var db = OpenSqlConnection())
+            {
+                return db.Query<ScheduleEventModel>("dbo.ProcEvents", commandType: CommandType.StoredProcedure).ToList();
+            }
+        }
+        public static void EventUpdate(SubjectModel subject)
+        {
+            using (var db = OpenSqlConnection())
+            {
+                db.Query<EmployeeModel>("dbo.ProcEventUpdate", subject, commandType: CommandType.StoredProcedure);
+            }
+        }
+        public static void EventDelete(int Id)
+        {
+            using (var db = OpenSqlConnection())
+            {
+                db.Query<SubjectModel>("dbo.ProcEventDelete", new { Id }, commandType: CommandType.StoredProcedure);
+            }
+        }
+        #endregion
+
+        #region StudyGroups
+        public static void SubjectStudyGroups(int Id)
+        {
+            using (var db = OpenSqlConnection())
+            {
+                db.Query<SubjectModel>("dbo.ProcSubjectStudyGroups", new { Id }, commandType: CommandType.StoredProcedure);
+            }
+        }
+
+        public static void EventInsert(StudyGroupModel subject)
+        {
+            using (var db = OpenSqlConnection())
+            {
+                db.Query<EmployeeModel>("dbo.ProcEventInsert", subject, commandType: CommandType.StoredProcedure);
+            }
+        }
+        public static List<SubjectModel> StudyGroups()
+        {
+            using (var db = OpenSqlConnection())
+            {
+                return db.Query<SubjectModel>("dbo.ProcStudyGroups", commandType: CommandType.StoredProcedure).ToList();
+            }
+        }
+        public static void StudyGroupUpdate(SubjectModel subject)
+        {
+            using (var db = OpenSqlConnection())
+            {
+                db.Query<EmployeeModel>("dbo.ProcStudyGroupUpdate", subject, commandType: CommandType.StoredProcedure);
+            }
+        }
+        public static void StudyGroupDelete(int Id)
+        {
+            using (var db = OpenSqlConnection())
+            {
+                db.Query<SubjectModel>("dbo.ProcStudyGroupDelete", new { Id }, commandType: CommandType.StoredProcedure);
+            }
+        }
+        #endregion
+
+        #region 
+
         #endregion
     }
 }

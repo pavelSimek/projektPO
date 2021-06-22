@@ -7,9 +7,9 @@ namespace projektPO.Forms
 {
     public partial class EmployeeForm : Form
     {
-        private EmployeeDTOModel _employee = new EmployeeDTOModel();
+        private EmployeeModel _employee = new EmployeeModel();
         private Employees _parentForm;
-        public EmployeeForm(EmployeeDTOModel employee, Employees parentForm)
+        public EmployeeForm(EmployeeModel employee, Employees parentForm)
         {
             InitializeComponent();
             _employee = employee;
@@ -52,14 +52,16 @@ namespace projektPO.Forms
             if (_employee != null)
             {
                 PrepareEmployee();
+                if (!CheckDuplicity())
+                      return;
                 DbService.EmployeeUpdate(_employee);
-                _parentForm.RefreshEmployeesTable();
             }
             else
             {
                 PrepareEmployee();
+                if (!CheckDuplicity())
+                    return;
                 DbService.EmployeeInsert(_employee);
-                _parentForm.RefreshEmployeesTable();
                 this.Close();
             }
         }
@@ -67,7 +69,7 @@ namespace projektPO.Forms
         {
             if (_employee == null)
             {
-                _employee = new EmployeeDTOModel();
+                _employee = new EmployeeModel();
             }
             _employee.FirstName = tbFirstName.Text;
             _employee.LastName = tbLastName.Text;
@@ -85,8 +87,23 @@ namespace projektPO.Forms
             if (_employee == null)
                 return;
             DbService.EmployeeDelete(_employee.Id);
-            _parentForm.RefreshEmployeesTable();
             this.Close();
+        }
+        private bool CheckDuplicity()
+        {
+            var employeeDuplicity = DbService.EmployeeExists(_employee.PartyCode, _employee.Id);
+            if (employeeDuplicity != null)
+            {
+                MessageBox.Show(string.Format("Zaměstnanec s tímto RČ v systému existuje. Jmenuje se: {0} {1}", employeeDuplicity.FirstName, employeeDuplicity.LastName));
+                return false;
+            }
+            return true;
+        }
+
+        private void EmployeeForm_FormClosing(object sender, EventArgs e)
+        {
+            _parentForm.RefreshEmployeesTable();
+            _parentForm.Show();
         }
     }
 }

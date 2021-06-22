@@ -15,8 +15,8 @@ namespace projektPO.Forms
         public SubjectForm(SubjectModel subject, SubjectsForm patrentForm)
         {
             InitializeComponent();
-            PrepareForm();
             _subject = subject;
+            PrepareForm();
             _parentForm = patrentForm;
         }
         private void PrepareForm()
@@ -26,6 +26,19 @@ namespace projektPO.Forms
             cbGuaranteeingInstitute.DataSource = DbService.Institutes().Select(x=>x.ShortName).ToList();
             if (_subject == null)
                 return;
+
+            tbName.Text = _subject.Name;
+            tbShortName.Text = _subject.ShortName;
+            nLectureHours.Value = _subject.LectureHours;
+            nExcerciseHours.Value = _subject.ExerciseHours;
+            nSeminarHours.Value = _subject.SeminarHours;
+            tbGuarantorName.Text = _subject.GuarantorName;
+            nClassSize.Value = _subject.ClassSize;
+            nCredits.Value = _subject.Credits;
+            cbGuaranteeingInstitute.Text = _subject.GuaranteeingInstitute;
+            tbGuarantorName.Text = _subject.GuarantorName;
+            nWeeks.Value = _subject.Weeks;
+            bAdd.Text = "Uložit";
         }
 
         private void bAdd_Click(object sender, EventArgs e)
@@ -77,6 +90,15 @@ namespace projektPO.Forms
             cbGuaranteeingInstitute.Text = string.Empty;
             tbGuarantorName.Text = string.Empty;
             nWeeks.Value = 0;
+        }
+
+        private void bClear_Click(object sender, EventArgs e)
+        {
+            if (_subject == null)
+                return;
+            DbService.SubjectDelete(_subject.Id);
+            _parentForm.RefreshEmployeesTable();
+            this.Close();
         }
     }
 }

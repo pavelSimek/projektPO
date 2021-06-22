@@ -21,7 +21,6 @@ namespace projektPO.Models
         public int Credits { get; set; }
         public string GuaranteeingInstitute { get; set; }
         public string GuarantorName { get; set; }
-        public List<StudyGroup> StudyGroups { get; set; }
         public int Weeks { get; set; }
     }
 }

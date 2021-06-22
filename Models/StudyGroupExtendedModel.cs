@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace projektPO.Models
 {
-    public class Institute
+    public class StudyGroupExtendedModel : StudyGroupModel
     {
-        public string ShortName { get; set; }
-        public string Name { get; set; }
+        public List<SubjectExtendedModel> Subjects { get; set; }
     }
 }

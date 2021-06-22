@@ -76,6 +76,7 @@ namespace projektPO.Forms
             this.bClear.TabIndex = 43;
             this.bClear.Text = "Smazat";
             this.bClear.UseVisualStyleBackColor = true;
+            this.bClear.Click += new System.EventHandler(this.bClear_Click);
             // 
             // bAdd
             // 

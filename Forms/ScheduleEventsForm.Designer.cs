@@ -51,6 +51,7 @@ namespace projektPO.Forms
             this.dgEvents.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgEvents.Size = new System.Drawing.Size(800, 327);
             this.dgEvents.TabIndex = 8;
+            this.dgEvents.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgEvents_CellContentClick);
             // 
             // bAdd
             // 
@@ -58,8 +59,9 @@ namespace projektPO.Forms
             this.bAdd.Name = "bAdd";
             this.bAdd.Size = new System.Drawing.Size(206, 45);
             this.bAdd.TabIndex = 9;
-            this.bAdd.Text = "Přidat výukovou akci";
+            this.bAdd.Text = "Přidat rozvrhovou akci";
             this.bAdd.UseVisualStyleBackColor = true;
+            this.bAdd.Click += new System.EventHandler(this.bAdd_Click);
             // 
             // lEmployee
             // 
@@ -67,9 +69,9 @@ namespace projektPO.Forms
             this.lEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lEmployee.Location = new System.Drawing.Point(12, 26);
             this.lEmployee.Name = "lEmployee";
-            this.lEmployee.Size = new System.Drawing.Size(324, 55);
+            this.lEmployee.Size = new System.Drawing.Size(370, 55);
             this.lEmployee.TabIndex = 7;
-            this.lEmployee.Text = "Výukové akce";
+            this.lEmployee.Text = "Rozvrhové akce";
             // 
             // ScheduleEventsForm
             // 
