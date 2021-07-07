@@ -33,15 +33,15 @@ namespace projektPO.Forms
             this.label12 = new System.Windows.Forms.Label();
             this.nClassSize = new System.Windows.Forms.NumericUpDown();
             this.label8 = new System.Windows.Forms.Label();
-            this.nWeeks = new System.Windows.Forms.NumericUpDown();
+            this.nHours = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
-            this.cbGuaranteeingInstitute = new System.Windows.Forms.ComboBox();
+            this.cbEventType = new System.Windows.Forms.ComboBox();
             this.cbLanguage = new System.Windows.Forms.ComboBox();
             this.cbSubject = new System.Windows.Forms.ComboBox();
             this.bClear = new System.Windows.Forms.Button();
             this.bAdd = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
-            this.nCredits = new System.Windows.Forms.NumericUpDown();
+            this.nWeeks = new System.Windows.Forms.NumericUpDown();
             this.label9 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -49,9 +49,10 @@ namespace projektPO.Forms
             this.lEmployee = new System.Windows.Forms.Label();
             this.cbEmployee = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
+            this.cActive = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.nClassSize)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nHours)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nWeeks)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nCredits)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -75,14 +76,14 @@ namespace projektPO.Forms
             // 
             // nClassSize
             // 
-            this.nClassSize.Location = new System.Drawing.Point(30, 197);
+            this.nClassSize.Location = new System.Drawing.Point(339, 194);
             this.nClassSize.Maximum = new decimal(new int[] {
             50,
             0,
             0,
             0});
             this.nClassSize.Name = "nClassSize";
-            this.nClassSize.Size = new System.Drawing.Size(100, 20);
+            this.nClassSize.Size = new System.Drawing.Size(115, 20);
             this.nClassSize.TabIndex = 88;
             // 
             // label8
@@ -94,17 +95,17 @@ namespace projektPO.Forms
             this.label8.TabIndex = 85;
             this.label8.Text = "Počet hodin";
             // 
-            // nWeeks
+            // nHours
             // 
-            this.nWeeks.Location = new System.Drawing.Point(30, 171);
-            this.nWeeks.Maximum = new decimal(new int[] {
+            this.nHours.Location = new System.Drawing.Point(30, 171);
+            this.nHours.Maximum = new decimal(new int[] {
             50,
             0,
             0,
             0});
-            this.nWeeks.Name = "nWeeks";
-            this.nWeeks.Size = new System.Drawing.Size(100, 20);
-            this.nWeeks.TabIndex = 84;
+            this.nHours.Name = "nHours";
+            this.nHours.Size = new System.Drawing.Size(100, 20);
+            this.nHours.TabIndex = 84;
             // 
             // label6
             // 
@@ -115,14 +116,14 @@ namespace projektPO.Forms
             this.label6.TabIndex = 83;
             this.label6.Text = "Typ rozvrhové akce";
             // 
-            // cbGuaranteeingInstitute
+            // cbEventType
             // 
-            this.cbGuaranteeingInstitute.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbGuaranteeingInstitute.FormattingEnabled = true;
-            this.cbGuaranteeingInstitute.Location = new System.Drawing.Point(339, 170);
-            this.cbGuaranteeingInstitute.Name = "cbGuaranteeingInstitute";
-            this.cbGuaranteeingInstitute.Size = new System.Drawing.Size(115, 21);
-            this.cbGuaranteeingInstitute.TabIndex = 82;
+            this.cbEventType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbEventType.FormattingEnabled = true;
+            this.cbEventType.Location = new System.Drawing.Point(339, 170);
+            this.cbEventType.Name = "cbEventType";
+            this.cbEventType.Size = new System.Drawing.Size(115, 21);
+            this.cbEventType.TabIndex = 82;
             // 
             // cbLanguage
             // 
@@ -171,17 +172,17 @@ namespace projektPO.Forms
             this.label10.TabIndex = 73;
             this.label10.Text = "Počet studentů";
             // 
-            // nCredits
+            // nWeeks
             // 
-            this.nCredits.Location = new System.Drawing.Point(339, 197);
-            this.nCredits.Maximum = new decimal(new int[] {
+            this.nWeeks.Location = new System.Drawing.Point(30, 204);
+            this.nWeeks.Maximum = new decimal(new int[] {
             50,
             0,
             0,
             0});
-            this.nCredits.Name = "nCredits";
-            this.nCredits.Size = new System.Drawing.Size(115, 20);
-            this.nCredits.TabIndex = 72;
+            this.nWeeks.Name = "nWeeks";
+            this.nWeeks.Size = new System.Drawing.Size(100, 20);
+            this.nWeeks.TabIndex = 72;
             // 
             // label9
             // 
@@ -245,26 +246,37 @@ namespace projektPO.Forms
             this.label13.TabIndex = 91;
             this.label13.Text = "Zaměstnanec";
             // 
+            // cActive
+            // 
+            this.cActive.AutoSize = true;
+            this.cActive.Location = new System.Drawing.Point(339, 224);
+            this.cActive.Name = "cActive";
+            this.cActive.Size = new System.Drawing.Size(60, 17);
+            this.cActive.TabIndex = 93;
+            this.cActive.Text = "Aktivní";
+            this.cActive.UseVisualStyleBackColor = true;
+            // 
             // EventForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(578, 272);
+            this.Controls.Add(this.cActive);
             this.Controls.Add(this.cbEmployee);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.nClassSize);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.nWeeks);
+            this.Controls.Add(this.nHours);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.cbGuaranteeingInstitute);
+            this.Controls.Add(this.cbEventType);
             this.Controls.Add(this.cbLanguage);
             this.Controls.Add(this.cbSubject);
             this.Controls.Add(this.bClear);
             this.Controls.Add(this.bAdd);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.nCredits);
+            this.Controls.Add(this.nWeeks);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label1);
@@ -273,8 +285,8 @@ namespace projektPO.Forms
             this.Name = "EventForm";
             this.Text = "Rozvrhová akce";
             ((System.ComponentModel.ISupportInitialize)(this.nClassSize)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nHours)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nWeeks)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nCredits)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -285,15 +297,15 @@ namespace projektPO.Forms
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.NumericUpDown nClassSize;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.NumericUpDown nWeeks;
+        private System.Windows.Forms.NumericUpDown nHours;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox cbGuaranteeingInstitute;
+        private System.Windows.Forms.ComboBox cbEventType;
         private System.Windows.Forms.ComboBox cbLanguage;
         private System.Windows.Forms.ComboBox cbSubject;
         private System.Windows.Forms.Button bClear;
         private System.Windows.Forms.Button bAdd;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.NumericUpDown nCredits;
+        private System.Windows.Forms.NumericUpDown nWeeks;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label1;
@@ -301,5 +313,6 @@ namespace projektPO.Forms
         private System.Windows.Forms.Label lEmployee;
         private System.Windows.Forms.ComboBox cbEmployee;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.CheckBox cActive;
     }
 }

@@ -14,7 +14,6 @@ namespace projektPO.Forms
             InitializeComponent();
             _employee = employee;
             PrepareForm();
-            _parentForm = new Employees();
             _parentForm = parentForm;
         }
         private void PrepareForm()

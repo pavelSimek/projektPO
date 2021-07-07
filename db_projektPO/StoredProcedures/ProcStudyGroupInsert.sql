@@ -6,9 +6,10 @@
     @NumberOfStudents INT, 
 	@StudyType nvarchar(3),
 	@StudyForm nvarchar(2),
-	@Id INT
+	@Id INT,
+	@Name NVARCHAR(100)
 AS
-	INSERT INTO StudyGroup(ShortName, Year, Semester, NumberOfStudents, StudyForm, StudyType, Language)
+	INSERT INTO StudyGroup(ShortName, Year, Semester, NumberOfStudents, StudyForm, StudyType, Language, Name)
 	VALUES(
 	@ShortName,
 	@Year,
@@ -16,4 +17,5 @@ AS
 	@NumberOfStudents,
 	@StudyForm,
 	@StudyType,
-    @Language)
+    @Language,
+	@Name )

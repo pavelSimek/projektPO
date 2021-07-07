@@ -21,5 +21,11 @@ namespace projektPO
             var form = new SubjectsForm();
             form.Show();
         }
+
+        private void button4_Click(object sender, System.EventArgs e)
+        {
+            var form = new EventsForm();
+            form.Show();
+        }
     }
 }

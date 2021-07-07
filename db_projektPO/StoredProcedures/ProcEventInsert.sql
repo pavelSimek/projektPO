@@ -7,9 +7,10 @@
     @Language nvarchar(5), 
     @Hours INT, 
     @Weeks INT,
-	@Id INT
+	@Id INT,
+	@Active BIT
 AS
-	INSERT INTO Event(Name, EmployeeId, SubjectId, NumberOfStudents, ScheduleEventType, Hours, Weeks, Language)
+	INSERT INTO Event(Name, EmployeeId, SubjectId, NumberOfStudents, ScheduleEventType, Hours, Weeks, Language, Active)
 	VALUES(
 	@Name,
 	@EmployeeId,
@@ -18,4 +19,5 @@ AS
 	@ScheduleEventType,
     @Hours, 
     @Weeks,
-	@Language)
+	@Language,
+	@Active)

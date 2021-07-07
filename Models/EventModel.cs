@@ -7,7 +7,7 @@ using static projektPO.Models.Enums;
 
 namespace projektPO.Models
 {
-    public class ScheduleEventModel
+    public class EventModel
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -18,10 +18,6 @@ namespace projektPO.Models
         public int Hours { get; set; }
         public int Weeks { get; set; }
         public Language Language { get; set; }
-        public double PointsPerEvent()
-        {
-            double x = 0;
-            return x;
-        }
+        public bool Active { get; set; }
     }
 }

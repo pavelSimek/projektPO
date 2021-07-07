@@ -67,17 +67,29 @@
     <Compile Include="Forms\EventForm.Designer.cs">
       <DependentUpon>EventForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\EventsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EventsForm.Designer.cs">
+      <DependentUpon>EventsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ScheduleEventsForm.cs">
+    <Compile Include="Forms\StudyGroupForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ScheduleEventsForm.Designer.cs">
-      <DependentUpon>ScheduleEventsForm.cs</DependentUpon>
+    <Compile Include="Forms\StudyGroupForm.Designer.cs">
+      <DependentUpon>StudyGroupForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\StudyGroupsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\StudyGroupsForm.Designer.cs">
+      <DependentUpon>StudyGroupsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\SubjectForm.cs">
       <SubType>Form</SubType>
@@ -96,7 +108,7 @@
     <Compile Include="Models\Enums.cs" />
     <Compile Include="Models\InstituteModel.cs" />
     <Compile Include="Models\ScheduleEventExtendedModel.cs" />
-    <Compile Include="Models\ScheduleEventModel.cs" />
+    <Compile Include="Models\EventModel.cs" />
     <Compile Include="Models\StudyGroupModel.cs" />
     <Compile Include="Models\StudyGroupExtendedModel.cs" />
     <Compile Include="Models\SubjectExtendedModel.cs" />
@@ -115,11 +127,14 @@
     <EmbeddedResource Include="Forms\EventForm.resx">
       <DependentUpon>EventForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EventsForm.resx">
+      <DependentUpon>EventsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScheduleEventsForm.resx">
-      <DependentUpon>ScheduleEventsForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\StudyGroupsForm.resx">
+      <DependentUpon>StudyGroupsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SubjectForm.resx">
       <DependentUpon>SubjectForm.cs</DependentUpon>

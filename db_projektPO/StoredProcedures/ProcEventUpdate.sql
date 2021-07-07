@@ -7,7 +7,8 @@
     @Language nvarchar(2), 
     @Hours INT, 
     @Weeks INT,
-	@Id INT
+	@Id INT,
+	@Active BIT
 AS
 	UPDATE Event 
 	SET 
@@ -18,5 +19,6 @@ AS
 		ScheduleEventType = @ScheduleEventType,  
 		Hours = @Hours, 
 		Weeks = @Weeks , 
-		Language = @Language
+		Language = @Language,
+		Active = @Active
 	WHERE Id = @Id

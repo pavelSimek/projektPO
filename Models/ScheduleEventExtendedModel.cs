@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace projektPO.Models
 {
-    public class ScheduleEventExtendedModel : ScheduleEventModel
+    public class ScheduleEventExtendedModel : EventModel
     {
         public EmployeeModel Employee { get; set; }
         public SubjectModel Subject { get; set; }

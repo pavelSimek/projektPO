@@ -58,7 +58,7 @@ namespace projektPO.Services
         }
                 #endregion
 
-                #region Institute
+        #region Institute
                 public static List<InstituteModel> Institutes()
         {
             using (var db = OpenSqlConnection())
@@ -100,21 +100,21 @@ namespace projektPO.Services
         #endregion
 
         #region Event
-        public static void EventInsert(SubjectModel subject)
+        public static void EventInsert(EventModel subject)
         {
             using (var db = OpenSqlConnection())
             {
-                db.Query<EmployeeModel>("dbo.ProcEventInsert", subject, commandType: CommandType.StoredProcedure);
+                db.Query<EventModel>("dbo.ProcEventInsert", subject, commandType: CommandType.StoredProcedure);
             }
         }
-        public static List<ScheduleEventModel> Events()
+        public static List<EventModel> Events()
         {
             using (var db = OpenSqlConnection())
             {
-                return db.Query<ScheduleEventModel>("dbo.ProcEvents", commandType: CommandType.StoredProcedure).ToList();
+                return db.Query<EventModel>("dbo.ProcEvents", commandType: CommandType.StoredProcedure).ToList();
             }
         }
-        public static void EventUpdate(SubjectModel subject)
+        public static void EventUpdate(EventModel subject)
         {
             using (var db = OpenSqlConnection())
             {
@@ -146,25 +146,25 @@ namespace projektPO.Services
                 db.Query<EmployeeModel>("dbo.ProcEventInsert", subject, commandType: CommandType.StoredProcedure);
             }
         }
-        public static List<SubjectModel> StudyGroups()
+        public static List<StudyGroupModel> StudyGroups()
         {
             using (var db = OpenSqlConnection())
             {
-                return db.Query<SubjectModel>("dbo.ProcStudyGroups", commandType: CommandType.StoredProcedure).ToList();
+                return db.Query<StudyGroupModel>("dbo.ProcStudyGroups", commandType: CommandType.StoredProcedure).ToList();
             }
         }
-        public static void StudyGroupUpdate(SubjectModel subject)
+        public static void StudyGroupUpdate(StudyGroupModel subject)
         {
             using (var db = OpenSqlConnection())
             {
-                db.Query<EmployeeModel>("dbo.ProcStudyGroupUpdate", subject, commandType: CommandType.StoredProcedure);
+                db.Query<StudyGroupModel>("dbo.ProcStudyGroupUpdate", subject, commandType: CommandType.StoredProcedure);
             }
         }
         public static void StudyGroupDelete(int Id)
         {
             using (var db = OpenSqlConnection())
             {
-                db.Query<SubjectModel>("dbo.ProcStudyGroupDelete", new { Id }, commandType: CommandType.StoredProcedure);
+                db.Query<StudyGroupModel>("dbo.ProcStudyGroupDelete", new { Id }, commandType: CommandType.StoredProcedure);
             }
         }
         #endregion

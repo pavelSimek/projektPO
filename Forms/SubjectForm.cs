@@ -23,7 +23,7 @@ namespace projektPO.Forms
         {
             cbLanguage.DataSource = Enum.GetValues(typeof(Enums.Language));
             cbEndType.DataSource = Enum.GetValues(typeof(Enums.EndType));
-            cbGuaranteeingInstitute.DataSource = DbService.Institutes().Select(x=>x.ShortName).ToList();
+            cbGuaranteeingInstitute.DataSource = DbService.Institutes().Select(x => x.ShortName).ToList();
             if (_subject == null)
                 return;
 

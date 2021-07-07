@@ -6,7 +6,8 @@
     @NumberOfStudents INT, 
 	@StudyType nvarchar(3),
 	@StudyForm nvarchar(2),
-	@Id INT
+	@Id INT,
+	@Name NVARCHAR(100)
 AS
 	UPDATE StudyGroup
 	SET 
@@ -16,5 +17,6 @@ AS
 	NumberOfStudents = @NumberOfStudents, 
 	StudyForm = @StudyForm, 
 	StudyType = @StudyType, 
-	Language = @Language
+	Language = @Language,
+	Name = 	@Name
 	WHERE Id = @Id
