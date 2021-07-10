@@ -11,13 +11,14 @@ namespace projektPO.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public int EmployeeID { get; set; }
-        public int SubjectID { get; set; }
+        public int? EmployeeID { get; set; }
+        public int? SubjectID { get; set; }
         public int NumberOfStudents { get; set; }
         public ScheduleEventType ScheduleEventType { get; set; }
         public int Hours { get; set; }
         public int Weeks { get; set; }
         public Language Language { get; set; }
         public bool Active { get; set; }
+        public int? StudyGroupId { get; set; }
     }
 }

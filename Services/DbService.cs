@@ -83,6 +83,14 @@ namespace projektPO.Services
                 return db.Query<SubjectModel>("dbo.ProcSubjects", commandType: CommandType.StoredProcedure).ToList();
             }
         }
+        public static SubjectModel Subject(int id)
+        {
+            using (var db = OpenSqlConnection())
+            {
+                return db.Query<SubjectModel>("dbo.ProcSubject", new { id }, commandType: CommandType.StoredProcedure).FirstOrDefault();
+            }
+        }
+
         public static void SubjectUpdate(SubjectModel subject)
         {
             using (var db = OpenSqlConnection())
@@ -100,11 +108,11 @@ namespace projektPO.Services
         #endregion
 
         #region Event
-        public static void EventInsert(EventModel subject)
+        public static void EventInsert(EventModel model)
         {
             using (var db = OpenSqlConnection())
             {
-                db.Query<EventModel>("dbo.ProcEventInsert", subject, commandType: CommandType.StoredProcedure);
+                db.Query<EventModel>("dbo.ProcEventInsert", model, commandType: CommandType.StoredProcedure);
             }
         }
         public static List<EventModel> Events()
@@ -114,11 +122,11 @@ namespace projektPO.Services
                 return db.Query<EventModel>("dbo.ProcEvents", commandType: CommandType.StoredProcedure).ToList();
             }
         }
-        public static void EventUpdate(EventModel subject)
+        public static void EventUpdate(EventModel model)
         {
             using (var db = OpenSqlConnection())
             {
-                db.Query<EmployeeModel>("dbo.ProcEventUpdate", subject, commandType: CommandType.StoredProcedure);
+                db.Query<EmployeeModel>("dbo.ProcEventUpdate", model, commandType: CommandType.StoredProcedure);
             }
         }
         public static void EventDelete(int Id)
@@ -127,6 +135,15 @@ namespace projektPO.Services
             {
                 db.Query<SubjectModel>("dbo.ProcEventDelete", new { Id }, commandType: CommandType.StoredProcedure);
             }
+        }
+
+        public static List<EventModel> EventByStudyGroupSubject(int? StudyGroupId, int? SubjectId)
+        {
+            using (var db = OpenSqlConnection())
+            {
+               return db.Query<EventModel>("dbo.ProcEventByStudyGroupSubject", new { StudyGroupId = StudyGroupId, SubjectId = SubjectId }, commandType: CommandType.StoredProcedure).ToList();
+            }
+            
         }
         #endregion
 
@@ -138,14 +155,14 @@ namespace projektPO.Services
                 db.Query<SubjectModel>("dbo.ProcSubjectStudyGroups", new { Id }, commandType: CommandType.StoredProcedure);
             }
         }
-
-        public static void EventInsert(StudyGroupModel subject)
+        public static StudyGroupModel StudyGroup(int Id)
         {
             using (var db = OpenSqlConnection())
             {
-                db.Query<EmployeeModel>("dbo.ProcEventInsert", subject, commandType: CommandType.StoredProcedure);
+                return db.Query<StudyGroupModel>("dbo.ProcStudyGroup", new { Id },commandType: CommandType.StoredProcedure).FirstOrDefault();
             }
         }
+
         public static List<StudyGroupModel> StudyGroups()
         {
             using (var db = OpenSqlConnection())
@@ -177,8 +194,23 @@ namespace projektPO.Services
         }
         #endregion
 
-        #region 
+        #region SubjectStudyGroups
+        public static void StudyGroupSubjectInsert(StudyGroupSubjectModel model)
+        {
+            using (var db = OpenSqlConnection())
+            {
+                db.Query<StudyGroupSubjectModel>("dbo.ProcSubjectStudyGroupInsert", model, commandType: CommandType.StoredProcedure);
+            }
+        }
 
+        public static void StudyGroupSubjectDelete(StudyGroupSubjectModel model)
+        {
+            using (var db = OpenSqlConnection())
+            {
+                db.Query<StudyGroupSubjectModel>("dbo.ProcSubjectStudyGroupDelete",  model , commandType: CommandType.StoredProcedure);
+            }
+        }
         #endregion
+
     }
 }

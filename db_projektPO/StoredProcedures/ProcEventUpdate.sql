@@ -1,14 +1,15 @@
 ﻿CREATE PROCEDURE [dbo].[ProcEventUpdate]
 	@Name nvarchar(100),
-	@EmployeeId INT,
-	@SubjectId INT,
+	@EmployeeId INT = NULL,
+	@SubjectId INT = NULL,
 	@NumberOfStudents INT,
 	@ScheduleEventType nvarchar(50),
     @Language nvarchar(2), 
     @Hours INT, 
     @Weeks INT,
 	@Id INT,
-	@Active BIT
+	@Active BIT,
+	@StudyGroupId INT = NULL
 AS
 	UPDATE Event 
 	SET 
@@ -20,5 +21,6 @@ AS
 		Hours = @Hours, 
 		Weeks = @Weeks , 
 		Language = @Language,
-		Active = @Active
+		Active = @Active,
+		StudyGroupId = @StudyGroupId
 	WHERE Id = @Id

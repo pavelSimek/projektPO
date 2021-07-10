@@ -33,6 +33,9 @@ namespace projektPO.Forms
             this.bAdd = new System.Windows.Forms.Button();
             this.lEmployee = new System.Windows.Forms.Label();
             this.bEdit = new System.Windows.Forms.Button();
+            this.cbShow = new System.Windows.Forms.CheckBox();
+            this.cbWithoutEmployee = new System.Windows.Forms.CheckBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgEvents)).BeginInit();
             this.SuspendLayout();
             // 
@@ -82,11 +85,49 @@ namespace projektPO.Forms
             this.bEdit.UseVisualStyleBackColor = true;
             this.bEdit.Click += new System.EventHandler(this.bEdit_Click);
             // 
+            // cbShow
+            // 
+            this.cbShow.AutoSize = true;
+            this.cbShow.BackColor = System.Drawing.Color.MediumPurple;
+            this.cbShow.Location = new System.Drawing.Point(388, 91);
+            this.cbShow.Name = "cbShow";
+            this.cbShow.Size = new System.Drawing.Size(152, 17);
+            this.cbShow.TabIndex = 14;
+            this.cbShow.Text = "Bez přiřazeného předmětu";
+            this.cbShow.UseVisualStyleBackColor = false;
+            this.cbShow.CheckedChanged += new System.EventHandler(this.cbShow_CheckedChanged);
+            // 
+            // cbWithoutEmployee
+            // 
+            this.cbWithoutEmployee.AutoSize = true;
+            this.cbWithoutEmployee.BackColor = System.Drawing.Color.Red;
+            this.cbWithoutEmployee.Location = new System.Drawing.Point(594, 91);
+            this.cbWithoutEmployee.Name = "cbWithoutEmployee";
+            this.cbWithoutEmployee.Size = new System.Drawing.Size(170, 17);
+            this.cbWithoutEmployee.TabIndex = 15;
+            this.cbWithoutEmployee.Text = "Bez přiřazeného zaměstnance";
+            this.cbWithoutEmployee.UseVisualStyleBackColor = false;
+            this.cbWithoutEmployee.CheckedChanged += new System.EventHandler(this.cbWithoutEmployee_CheckedChanged);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(22, 91);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(140, 17);
+            this.checkBox1.TabIndex = 16;
+            this.checkBox1.Text = "Zobrazit bližší informace";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
             // EventsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.cbWithoutEmployee);
+            this.Controls.Add(this.cbShow);
             this.Controls.Add(this.bEdit);
             this.Controls.Add(this.dgEvents);
             this.Controls.Add(this.bAdd);
@@ -105,5 +146,8 @@ namespace projektPO.Forms
         private System.Windows.Forms.Button bAdd;
         private System.Windows.Forms.Label lEmployee;
         private System.Windows.Forms.Button bEdit;
+        private System.Windows.Forms.CheckBox cbShow;
+        private System.Windows.Forms.CheckBox cbWithoutEmployee;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

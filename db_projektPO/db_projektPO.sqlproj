@@ -86,8 +86,14 @@
     <Build Include="StoredProcedures\ProcSubjectStudyGroupInsert.sql" />
     <Build Include="StoredProcedures\ProcSubjectStudyGroupDelete.sql" />
     <Build Include="StoredProcedures\ProcEmployeeExists.sql" />
+    <Build Include="StoredProcedures\ProcSubject.sql" />
+    <Build Include="StoredProcedures\ProcStudyGroup.sql" />
+    <Build Include="StoredProcedures\ProcEventByStudyGroupSubject.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="db_projektPO.publish.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="db_projektPO.refactorlog" />
   </ItemGroup>
 </Project>

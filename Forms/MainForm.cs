@@ -33,5 +33,11 @@ namespace projektPO
             var form = new StudyGroupsForm();
             form.Show();
         }
+
+        private void button5_Click(object sender, System.EventArgs e)
+        {
+            var form = new StudyGroupSubjectForm();
+            form.Show();
+        }
     }
 }

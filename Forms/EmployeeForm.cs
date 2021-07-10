@@ -85,13 +85,13 @@ namespace projektPO.Forms
         {
             if (_employee == null)
                 return;
-            DbService.EmployeeDelete(_employee.Id);
+            DbService.EmployeeDelete(_employee.Id.Value);
             _parentForm.RefreshEmployeesTable();
             this.Close();
         }
         private bool CheckDuplicity()
         {
-            var employeeDuplicity = DbService.EmployeeExists(_employee.PartyCode, _employee.Id);
+            var employeeDuplicity = DbService.EmployeeExists(_employee.PartyCode, _employee.Id.Value);
             if (employeeDuplicity != null)
             {
                 MessageBox.Show(string.Format("Zaměstnanec s tímto RČ v systému existuje. Jmenuje se: {0} {1}", employeeDuplicity.FirstName, employeeDuplicity.LastName));

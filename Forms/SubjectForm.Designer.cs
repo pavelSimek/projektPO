@@ -279,6 +279,11 @@ namespace projektPO.Forms
             this.nWeeks.Name = "nWeeks";
             this.nWeeks.Size = new System.Drawing.Size(100, 20);
             this.nWeeks.TabIndex = 54;
+            this.nWeeks.Value = new decimal(new int[] {
+            14,
+            0,
+            0,
+            0});
             // 
             // label8
             // 
@@ -309,13 +314,18 @@ namespace projektPO.Forms
             // 
             this.nClassSize.Location = new System.Drawing.Point(282, 236);
             this.nClassSize.Maximum = new decimal(new int[] {
-            50,
+            1000,
             0,
             0,
             0});
             this.nClassSize.Name = "nClassSize";
             this.nClassSize.Size = new System.Drawing.Size(100, 20);
             this.nClassSize.TabIndex = 58;
+            this.nClassSize.Value = new decimal(new int[] {
+            24,
+            0,
+            0,
+            0});
             // 
             // label12
             // 

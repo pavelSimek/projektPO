@@ -53,7 +53,12 @@ namespace projektPO.Forms
             if (_studyGroup != null)
             {
                 PrepareStudyGroup();
+                var studyGroup = DbService.StudyGroup(_studyGroup.Id);
                 DbService.StudyGroupUpdate(_studyGroup);
+                if (studyGroup.NumberOfStudents != _studyGroup.NumberOfStudents)
+                {
+                   EventGenerator.GenerateEventsAfterStudyGroupChange(_studyGroup.Id);
+                }
             }
             else
             {

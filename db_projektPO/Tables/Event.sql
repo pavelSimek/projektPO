@@ -9,5 +9,6 @@
     [Hours] INT NULL, 
     [Weeks] INT NULL,
     [Language] NVARCHAR(2) NULL, 
-    [Active] BIT NULL
+    [Active] BIT NULL, 
+    [StudyGroupId] INT NULL
 )

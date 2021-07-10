@@ -85,13 +85,14 @@ namespace projektPO.Forms
             // 
             this.nClassSize.Location = new System.Drawing.Point(294, 186);
             this.nClassSize.Maximum = new decimal(new int[] {
-            50,
+            10000,
             0,
             0,
             0});
             this.nClassSize.Name = "nClassSize";
             this.nClassSize.Size = new System.Drawing.Size(159, 20);
             this.nClassSize.TabIndex = 109;
+            this.nClassSize.ThousandsSeparator = true;
             // 
             // label8
             // 

@@ -48,7 +48,10 @@ namespace projektPO.Forms
             if (_subject != null)
             {
                 PrepareSubject();
+                var subject = DbService.Subject(_subject.Id.Value);
                 DbService.SubjectUpdate(_subject);
+                if (subject.ClassSize != _subject.ClassSize)
+                    EventGenerator.GenerateEventAfterSubjectChanged(_subject.Id.Value);
             }
             else
             {
@@ -97,7 +100,7 @@ namespace projektPO.Forms
         {
             if (_subject == null)
                 return;
-            DbService.SubjectDelete(_subject.Id);
+            DbService.SubjectDelete(_subject.Id.Value);
             _parentForm.RefreshSubjectsTable();
             this.Close();
         }

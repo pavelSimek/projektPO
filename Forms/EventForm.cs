@@ -29,9 +29,13 @@ namespace projektPO.Forms
         {
             cbLanguage.DataSource = Enum.GetValues(typeof(Enums.Language));
             cbEventType.DataSource = Enum.GetValues(typeof(Enums.ScheduleEventType));
-            _employees = DbService.Employees();
+            _employees = new List<EmployeeModel>();
+            _employees.Add(new EmployeeModel() { FirstName = "Zaměstnanec", Id = null });
+            _employees.AddRange(DbService.Employees());
             cbEmployee.DataSource = _employees.Select(x => x.FirstName + " " + x.LastName).ToList();
-            _subjects = DbService.Subjects();
+            _subjects = new List<SubjectModel>();
+            _subjects.Add(new SubjectModel() { Name = "Předmět", Id = null });
+            _subjects.AddRange(DbService.Subjects());
             cbSubject.DataSource = _subjects.Select(x => x.Name).ToList();
             
             if (_eventModel == null)
