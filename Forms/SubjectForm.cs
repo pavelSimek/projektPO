@@ -38,6 +38,8 @@ namespace projektPO.Forms
             cbGuaranteeingInstitute.Text = _subject.GuaranteeingInstitute;
             tbGuarantorName.Text = _subject.GuarantorName;
             nWeeks.Value = _subject.Weeks;
+            cbEndType.SelectedIndex = (int)_subject.EndType;
+            cbLanguage.SelectedIndex = (int)_subject.Language;
             bAdd.Text = "Uložit";
         }
 
@@ -47,15 +49,14 @@ namespace projektPO.Forms
             {
                 PrepareSubject();
                 DbService.SubjectUpdate(_subject);
-                _parentForm.RefreshEmployeesTable();
             }
             else
             {
                 PrepareSubject();
                 DbService.SubjectInsert(_subject);
-                _parentForm.RefreshEmployeesTable();
-                this.Close();
             }
+            _parentForm.RefreshSubjectsTable();
+            this.Close();
         }
         private void PrepareSubject()
         {
@@ -97,7 +98,7 @@ namespace projektPO.Forms
             if (_subject == null)
                 return;
             DbService.SubjectDelete(_subject.Id);
-            _parentForm.RefreshEmployeesTable();
+            _parentForm.RefreshSubjectsTable();
             this.Close();
         }
     }

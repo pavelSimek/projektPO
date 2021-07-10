@@ -19,6 +19,10 @@ namespace projektPO.Forms
         {
             InitializeComponent();
             _studyGroups = DbService.StudyGroups();
+            dgStudyGroups.DataSource = _studyGroups;
+            dgStudyGroups.Columns["Id"].Visible = false;
+            dgStudyGroups.Columns["EmployeeId"].Visible = false;
+            dgStudyGroups.Columns["SubjectId"].Visible = false;
         }
 
         private void button1_Click(object sender, EventArgs e)

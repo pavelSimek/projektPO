@@ -160,6 +160,14 @@ namespace projektPO.Services
                 db.Query<StudyGroupModel>("dbo.ProcStudyGroupUpdate", subject, commandType: CommandType.StoredProcedure);
             }
         }
+        public static void StudyGroupInsert(StudyGroupModel subject)
+        {
+            using (var db = OpenSqlConnection())
+            {
+                db.Query<StudyGroupModel>("dbo.ProcStudyGroupInsert", subject, commandType: CommandType.StoredProcedure);
+            }
+        }
+
         public static void StudyGroupDelete(int Id)
         {
             using (var db = OpenSqlConnection())

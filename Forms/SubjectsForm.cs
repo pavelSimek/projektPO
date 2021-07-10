@@ -40,7 +40,7 @@ namespace projektPO.Forms
             var form = new SubjectForm(null, this);
             form.Show();
         }
-        public void RefreshEmployeesTable()
+        public void RefreshSubjectsTable()
         {
             _subjects = DbService.Subjects();
             dgSubjects.DataSource = _subjects;

@@ -2,12 +2,6 @@
 using projektPO.Services;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace projektPO.Forms
@@ -20,6 +14,7 @@ namespace projektPO.Forms
             InitializeComponent();
             _events = DbService.Events();
             dgEvents.DataSource = _events;
+            dgEvents.Columns["Id"].Visible = false;
         }
 
         private void bAdd_Click(object sender, EventArgs e)

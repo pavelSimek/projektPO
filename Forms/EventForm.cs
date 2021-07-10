@@ -21,9 +21,9 @@ namespace projektPO.Forms
         public EventForm(EventModel eventModel, EventsForm parentForm)
         {
             InitializeComponent();
-            PrepareForm();
             _parentForm = parentForm;
             _eventModel = eventModel;
+            PrepareForm();
         }
         public void PrepareForm()
         {
@@ -33,7 +33,19 @@ namespace projektPO.Forms
             cbEmployee.DataSource = _employees.Select(x => x.FirstName + " " + x.LastName).ToList();
             _subjects = DbService.Subjects();
             cbSubject.DataSource = _subjects.Select(x => x.Name).ToList();
-
+            
+            if (_eventModel == null)
+                return;
+            cbEmployee.SelectedIndex = _employees.FindIndex(x => x.Id == _eventModel.EmployeeID);
+            cbSubject.SelectedIndex = _subjects.FindIndex(x => x.Id == _eventModel.SubjectID);
+            cbLanguage.SelectedIndex = (int)_eventModel.Language;
+            cbEventType.SelectedIndex = (int)_eventModel.ScheduleEventType;
+            tbName.Text = _eventModel.Name;
+            nHours.Value = _eventModel.Hours;
+            nWeeks.Value = _eventModel.Weeks;
+            nClassSize.Value = _eventModel.NumberOfStudents;
+            cActive.Checked = _eventModel.Active;
+            bAdd.Text = "Uložit";
         }
         private void bAdd_Click(object sender, EventArgs e)
         {
@@ -46,13 +58,20 @@ namespace projektPO.Forms
             {
                 PrepareEvent();
                 DbService.EventInsert(_eventModel);
-                this.Close();
             }
             this.Close();
             _parentForm.RefreshEventsTable();
         }
 
         private void bClear_Click(object sender, EventArgs e)
+        {
+            if (_eventModel == null)
+                return;
+            DbService.EventDelete(_eventModel.Id);
+            _parentForm.RefreshEventsTable();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
         {
             tbName.Text = string.Empty;
             cbEmployee.SelectedIndex = 0;
@@ -63,11 +82,6 @@ namespace projektPO.Forms
             cbLanguage.SelectedIndex = 0;
             cbSubject.SelectedIndex = 0;
             cActive.Checked = false;
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            _parentForm.RefreshEventsTable();
         }
 
         private void PrepareEvent()
@@ -87,7 +101,6 @@ namespace projektPO.Forms
             _eventModel.SubjectID = _subjects[subjectIndex].Id;
             _eventModel.Language = (Enums.Language)Enum.Parse(typeof(Enums.Language), cbLanguage.Text);
             _eventModel.ScheduleEventType = (Enums.ScheduleEventType)Enum.Parse(typeof(Enums.ScheduleEventType), cbEventType.Text);
-
         }
     }
 }

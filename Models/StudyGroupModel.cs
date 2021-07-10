@@ -9,7 +9,7 @@ namespace projektPO.Models
 {
     public class StudyGroupModel
     {
-        public string Id { get; set; }
+        public int Id { get; set; }
         public string ShortName { get; set; }
         public int Year { get; set; }
         public Semester Semester { get; set; }
@@ -17,5 +17,6 @@ namespace projektPO.Models
         public StudyForm StudyForm { get; set; }
         public StudyType StudyType { get; set; }
         public Language Language{ get; set; }
+        public string Name { get; set; }
     }
 }

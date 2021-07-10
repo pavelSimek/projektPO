@@ -64,6 +64,7 @@
             this.bGroup.TabIndex = 2;
             this.bGroup.Text = "Skupina";
             this.bGroup.UseVisualStyleBackColor = true;
+            this.bGroup.Click += new System.EventHandler(this.bGroup_Click);
             // 
             // button4
             // 

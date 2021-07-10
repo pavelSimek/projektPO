@@ -86,6 +86,7 @@ namespace projektPO.Forms
             if (_employee == null)
                 return;
             DbService.EmployeeDelete(_employee.Id);
+            _parentForm.RefreshEmployeesTable();
             this.Close();
         }
         private bool CheckDuplicity()
