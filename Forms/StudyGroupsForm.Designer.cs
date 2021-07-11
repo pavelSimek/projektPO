@@ -43,7 +43,7 @@ namespace projektPO.Forms
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(206, 45);
             this.button2.TabIndex = 8;
-            this.button2.Text = "Upravit zaměstnance";
+            this.button2.Text = "Upravit skupinu";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 

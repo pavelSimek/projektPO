@@ -6,12 +6,12 @@ namespace projektPO.Services
 {
     public static class XmlService
     {
-        public static WorkPointsValueModel GetWorkingPoints()
+        public static WorkPointsValue GetWorkingPoints()
         {
-            var serializer = new XmlSerializer(typeof(WorkPointsValueModel));
+            var serializer = new XmlSerializer(typeof(WorkPointsValue));
             var path = "../../ValuesConfig.xml";
             var reader = new StreamReader(path);
-            var workPointsValue = (WorkPointsValueModel)serializer.Deserialize(reader);
+            var workPointsValue = (WorkPointsValue)serializer.Deserialize(reader);
             reader.Close();
             return workPointsValue;
         }

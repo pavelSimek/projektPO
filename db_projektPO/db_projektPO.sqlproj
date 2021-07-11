@@ -89,6 +89,9 @@
     <Build Include="StoredProcedures\ProcSubject.sql" />
     <Build Include="StoredProcedures\ProcStudyGroup.sql" />
     <Build Include="StoredProcedures\ProcEventByStudyGroupSubject.sql" />
+    <Build Include="StoredProcedures\ProcEmployeeEvents.sql" />
+    <Build Include="StoredProcedures\ProcEventsByEmployee.sql" />
+    <Build Include="StoredProcedures\ProcStudyGroupBySubject.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="db_projektPO.publish.xml" />

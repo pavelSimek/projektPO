@@ -33,6 +33,7 @@ namespace projektPO.Forms
             dgSubjects.Columns["GuaranteeingInstitute"].HeaderText = "Garantující ústav";
             dgSubjects.Columns["GuarantorName"].HeaderText = "Jméno garanta";
             dgSubjects.Columns["Weeks"].HeaderText = "Počet týdnů";
+            dgSubjects.Columns["Name"].HeaderText = "Název";
         }
 
         private void button1_Click(object sender, EventArgs e)

@@ -15,17 +15,14 @@ namespace projektPO.Forms
             dgEmployees.DataSource = employees;
             dgEmployees.Columns["Id"].Visible = false;
             dgEmployees.Columns["PersonalEmail"].Visible = false;
-            dgEmployees.Columns["PhdStudent"].Width = 50;
-            //dgEmployees.Columns["WorkingPoints"].Width = 50;
-            //dgEmployees.Columns["WorkingPointsEN"].Width = 50;
-            dgEmployees.Columns["WorkingTime"].Width = 50;
             dgEmployees.Columns["PhdStudent"].HeaderText = "Doktorand";
-            //dgEmployees.Columns["WorkingPoints"].HeaderText = "Pracovní body";
-            //dgEmployees.Columns["WorkingPointsEN"].HeaderText = "Pracovní body + EN";
             dgEmployees.Columns["WorkingTime"].HeaderText = "Úvazek";
             dgEmployees.Columns["FirstName"].HeaderText = "Jméno";
             dgEmployees.Columns["LastName"].HeaderText = "Příjmení";
             dgEmployees.Columns["WorkEmail"].HeaderText = "Pracovní mail";
+            dgEmployees.Columns["Phone"].HeaderText = "Telefonní číslo";
+            dgEmployees.Columns["PersonalPhone"].HeaderText = "Osobní telefonní číslo";
+            dgEmployees.Columns["PartyCode"].HeaderText = "Rodné číslo";
         }
 
         private void button1_Click(object sender, System.EventArgs e)

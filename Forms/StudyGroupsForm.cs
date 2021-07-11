@@ -21,6 +21,14 @@ namespace projektPO.Forms
             _studyGroups = DbService.StudyGroups();
             dgStudyGroups.DataSource = _studyGroups;
             dgStudyGroups.Columns["Id"].Visible = false;
+            dgStudyGroups.Columns["ShortName"].HeaderText = "Zkratka";
+            dgStudyGroups.Columns["Name"].HeaderText = "Název";
+            dgStudyGroups.Columns["Language"].HeaderText = "Jazyk";
+            dgStudyGroups.Columns["StudyForm"].HeaderText = "Druh studia (k. / p.)";
+            dgStudyGroups.Columns["StudyType"].HeaderText = "Druh studia(mrg. / bc.)";
+            dgStudyGroups.Columns["NumberOfStudents"].HeaderText = "Počet studentů";
+            dgStudyGroups.Columns["Semester"].HeaderText = "Semestr";
+            dgStudyGroups.Columns["Year"].HeaderText = "Rok";
         }
 
         private void button1_Click(object sender, EventArgs e)

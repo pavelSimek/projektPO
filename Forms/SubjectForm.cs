@@ -1,6 +1,7 @@
 ﻿using projektPO.Models;
 using projektPO.Services;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
@@ -11,6 +12,7 @@ namespace projektPO.Forms
     {
         SubjectsForm _parentForm = new SubjectsForm();
         SubjectModel _subject;
+        List<StudyGroupModel> _studyGroups = new List<StudyGroupModel>();
 
         public SubjectForm(SubjectModel subject, SubjectsForm patrentForm)
         {
@@ -41,6 +43,18 @@ namespace projektPO.Forms
             cbEndType.SelectedIndex = (int)_subject.EndType;
             cbLanguage.SelectedIndex = (int)_subject.Language;
             bAdd.Text = "Uložit";
+
+            _studyGroups = DbService.SubjectStudyGroups(_subject.Id.Value);
+            dgStudyGroups.DataSource = _studyGroups;
+            dgStudyGroups.Columns["Id"].Visible = false;
+            dgStudyGroups.Columns["ShortName"].HeaderText = "Zkratka";
+            dgStudyGroups.Columns["Name"].HeaderText = "Název";
+            dgStudyGroups.Columns["Language"].HeaderText = "Jazyk";
+            dgStudyGroups.Columns["StudyForm"].HeaderText = "Druh studia (k. / p.)";
+            dgStudyGroups.Columns["StudyType"].HeaderText = "Druh studia(mrg. / bc.)";
+            dgStudyGroups.Columns["NumberOfStudents"].HeaderText = "Počet studentů";
+            dgStudyGroups.Columns["Semester"].HeaderText = "Semestr";
+            dgStudyGroups.Columns["Year"].HeaderText = "Rok";
         }
 
         private void bAdd_Click(object sender, EventArgs e)

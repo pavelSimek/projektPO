@@ -3,7 +3,7 @@ using System.Xml.Serialization;
 
 namespace projektPO.Models
 {
-    public class WorkPointsValueModel
+    public class WorkPointsValue
     {
         public double LectureHour { get; set; }
         public double ExcerciseHour { get; set; }

@@ -34,6 +34,10 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.dgEmployees = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgEmployees)).BeginInit();
             this.SuspendLayout();
             // 
             // bEmployee
@@ -96,11 +100,42 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Úpravy";
             // 
+            // dgEmployees
+            // 
+            this.dgEmployees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgEmployees.Location = new System.Drawing.Point(12, 80);
+            this.dgEmployees.Name = "dgEmployees";
+            this.dgEmployees.Size = new System.Drawing.Size(551, 233);
+            this.dgEmployees.TabIndex = 6;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.Location = new System.Drawing.Point(12, 20);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(498, 42);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Úvazky zaměstnanců a body";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(505, 25);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(53, 49);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Obnovit";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(802, 328);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.dgEmployees);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
@@ -108,7 +143,8 @@
             this.Controls.Add(this.bSubject);
             this.Controls.Add(this.bEmployee);
             this.Name = "MainForm";
-            this.Text = "Form1";
+            this.Text = "Hlavní formulář";
+            ((System.ComponentModel.ISupportInitialize)(this.dgEmployees)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -122,6 +158,9 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView dgEmployees;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button1;
     }
 }
 

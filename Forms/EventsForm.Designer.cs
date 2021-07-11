@@ -81,7 +81,7 @@ namespace projektPO.Forms
             this.bEdit.Name = "bEdit";
             this.bEdit.Size = new System.Drawing.Size(206, 45);
             this.bEdit.TabIndex = 13;
-            this.bEdit.Text = "Upravit rozvrhovou akci";
+            this.bEdit.Text = "Upravit rozvrhovou akci / zobrazit detaily";
             this.bEdit.UseVisualStyleBackColor = true;
             this.bEdit.Click += new System.EventHandler(this.bEdit_Click);
             // 

@@ -50,7 +50,10 @@ namespace projektPO.Forms
             this.bClear = new System.Windows.Forms.Button();
             this.cbPhdStudent = new System.Windows.Forms.CheckBox();
             this.bDelete = new System.Windows.Forms.Button();
+            this.dgEvents = new System.Windows.Forms.DataGridView();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nWorkTime)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgEvents)).BeginInit();
             this.SuspendLayout();
             // 
             // lEmployee
@@ -199,6 +202,7 @@ namespace projektPO.Forms
             this.nWorkTime.Name = "nWorkTime";
             this.nWorkTime.Size = new System.Drawing.Size(100, 20);
             this.nWorkTime.TabIndex = 19;
+            this.nWorkTime.ValueChanged += new System.EventHandler(this.nWorkTime_ValueChanged);
             // 
             // label10
             // 
@@ -211,7 +215,7 @@ namespace projektPO.Forms
             // 
             // bAdd
             // 
-            this.bAdd.Location = new System.Drawing.Point(509, 12);
+            this.bAdd.Location = new System.Drawing.Point(418, 7);
             this.bAdd.Name = "bAdd";
             this.bAdd.Size = new System.Drawing.Size(103, 31);
             this.bAdd.TabIndex = 21;
@@ -238,10 +242,11 @@ namespace projektPO.Forms
             this.cbPhdStudent.TabIndex = 24;
             this.cbPhdStudent.Text = "Doktorand";
             this.cbPhdStudent.UseVisualStyleBackColor = true;
+            this.cbPhdStudent.CheckedChanged += new System.EventHandler(this.cbPhdStudent_CheckedChanged);
             // 
             // bDelete
             // 
-            this.bDelete.Location = new System.Drawing.Point(509, 49);
+            this.bDelete.Location = new System.Drawing.Point(418, 44);
             this.bDelete.Name = "bDelete";
             this.bDelete.Size = new System.Drawing.Size(103, 31);
             this.bDelete.TabIndex = 25;
@@ -249,11 +254,31 @@ namespace projektPO.Forms
             this.bDelete.UseVisualStyleBackColor = true;
             this.bDelete.Click += new System.EventHandler(this.bDelete_Click);
             // 
+            // dgEvents
+            // 
+            this.dgEvents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgEvents.Location = new System.Drawing.Point(553, 75);
+            this.dgEvents.Name = "dgEvents";
+            this.dgEvents.Size = new System.Drawing.Size(565, 216);
+            this.dgEvents.TabIndex = 26;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label7.Location = new System.Drawing.Point(543, 9);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(370, 55);
+            this.label7.TabIndex = 27;
+            this.label7.Text = "Rozvrhové akce";
+            // 
             // EmployeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(638, 259);
+            this.ClientSize = new System.Drawing.Size(1198, 295);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.dgEvents);
             this.Controls.Add(this.bDelete);
             this.Controls.Add(this.cbPhdStudent);
             this.Controls.Add(this.bClear);
@@ -279,6 +304,7 @@ namespace projektPO.Forms
             this.Text = "Zaměstnanec";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EmployeeForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.nWorkTime)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgEvents)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -307,5 +333,7 @@ namespace projektPO.Forms
         private System.Windows.Forms.Button bClear;
         private System.Windows.Forms.CheckBox cbPhdStudent;
         private System.Windows.Forms.Button bDelete;
+        private System.Windows.Forms.DataGridView dgEvents;
+        private System.Windows.Forms.Label label7;
     }
 }

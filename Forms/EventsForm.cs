@@ -23,6 +23,13 @@ namespace projektPO.Forms
             dgEvents.Columns["SubjectID"].Visible = false;
             dgEvents.Columns["EmployeeID"].Visible = false;
             cbShow.Visible = cbWithoutEmployee.Visible = false;
+            dgEvents.Columns["Name"].HeaderText = "Název";
+            dgEvents.Columns["NumberOfStudents"].HeaderText = "Počet studentů";
+            dgEvents.Columns["ScheduleEventType"].HeaderText = "Typ rozvrhové akce";
+            dgEvents.Columns["Hours"].HeaderText = "Počet hodin";
+            dgEvents.Columns["Weeks"].HeaderText = "Počet týdnů";
+            dgEvents.Columns["Active"].HeaderText = "Aktivní";
+            dgEvents.Columns["Language"].HeaderText = "Jazyk";
         }
 
         private void bAdd_Click(object sender, EventArgs e)

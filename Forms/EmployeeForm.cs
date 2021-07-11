@@ -31,6 +31,16 @@ namespace projektPO.Forms
             nWorkTime.Value = Convert.ToDecimal(_employee.WorkingTime);
             cbPhdStudent.Checked = _employee.PhdStudent;
             bAdd.Text = "Uložit";
+            dgEvents.DataSource = DbService.EventsByEmployee(_employee.Id.Value);
+            dgEvents.Columns["Id"].Visible = dgEvents.Columns["EmployeeId"].Visible 
+                = dgEvents.Columns["SubjectId"].Visible = dgEvents.Columns["StudyGroupId"].Visible = false;
+            dgEvents.Columns["Name"].HeaderText = "Název";
+            dgEvents.Columns["NumberOfStudents"].HeaderText = "Počet studentů";
+            dgEvents.Columns["ScheduleEventType"].HeaderText = "Typ rozvrhové akce";
+            dgEvents.Columns["Hours"].HeaderText = "Počet hodin";
+            dgEvents.Columns["Weeks"].HeaderText = "Počet týdnů";
+            dgEvents.Columns["Active"].HeaderText = "Aktivní";
+            dgEvents.Columns["Language"].HeaderText = "Jazyk";
         }
 
         private void bClear_Click(object sender, EventArgs e)
@@ -104,6 +114,18 @@ namespace projektPO.Forms
         {
             _parentForm.RefreshEmployeesTable();
             _parentForm.Show();
+        }
+
+        private void nWorkTime_ValueChanged(object sender, EventArgs e)
+        {
+            if (cbPhdStudent.Checked)
+                nWorkTime.Value = 0;
+        }
+
+        private void cbPhdStudent_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbPhdStudent.Checked)
+                nWorkTime.Value = 0;
         }
     }
 }

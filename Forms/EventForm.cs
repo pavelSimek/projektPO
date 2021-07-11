@@ -37,7 +37,9 @@ namespace projektPO.Forms
             _subjects.Add(new SubjectModel() { Name = "Předmět", Id = null });
             _subjects.AddRange(DbService.Subjects());
             cbSubject.DataSource = _subjects.Select(x => x.Name).ToList();
-            
+            lWorkingPoints.Text = "Počet bodů za pracovní štítek: " + WorkingPointsCalculator.CalculateEvent(_eventModel).ToString();
+
+
             if (_eventModel == null)
                 return;
             cbEmployee.SelectedIndex = _employees.FindIndex(x => x.Id == _eventModel.EmployeeID);
@@ -73,6 +75,7 @@ namespace projektPO.Forms
                 return;
             DbService.EventDelete(_eventModel.Id);
             _parentForm.RefreshEventsTable();
+            this.Close();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -105,6 +108,36 @@ namespace projektPO.Forms
             _eventModel.SubjectID = _subjects[subjectIndex].Id;
             _eventModel.Language = (Enums.Language)Enum.Parse(typeof(Enums.Language), cbLanguage.Text);
             _eventModel.ScheduleEventType = (Enums.ScheduleEventType)Enum.Parse(typeof(Enums.ScheduleEventType), cbEventType.Text);
+        }
+
+        private void cbEventType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var eventType = (Enums.ScheduleEventType)Enum.Parse(typeof(Enums.ScheduleEventType), cbEventType.Text);
+            if (eventType == Enums.ScheduleEventType.Exam || eventType == Enums.ScheduleEventType.Credit || eventType == Enums.ScheduleEventType.GradedCredit)
+            {
+                nWeeks.Value = 0;
+                nHours.Value = 0;
+            }
+        }
+
+        private void nHours_ValueChanged(object sender, EventArgs e)
+        {
+            var eventType = (Enums.ScheduleEventType)Enum.Parse(typeof(Enums.ScheduleEventType), cbEventType.Text);
+            if (eventType == Enums.ScheduleEventType.Exam || eventType == Enums.ScheduleEventType.Credit || eventType == Enums.ScheduleEventType.GradedCredit)
+            {
+                nWeeks.Value = 0;
+                nHours.Value = 0;
+            }
+        }
+
+        private void nWeeks_ValueChanged(object sender, EventArgs e)
+        {
+            var eventType = (Enums.ScheduleEventType)Enum.Parse(typeof(Enums.ScheduleEventType), cbEventType.Text);
+            if (eventType == Enums.ScheduleEventType.Exam || eventType == Enums.ScheduleEventType.Credit || eventType == Enums.ScheduleEventType.GradedCredit)
+            {
+                nWeeks.Value = 0;
+                nHours.Value = 0;
+            }
         }
     }
 }

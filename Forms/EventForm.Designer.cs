@@ -50,6 +50,7 @@ namespace projektPO.Forms
             this.cbEmployee = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.cActive = new System.Windows.Forms.CheckBox();
+            this.lWorkingPoints = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nClassSize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nHours)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nWeeks)).BeginInit();
@@ -106,6 +107,7 @@ namespace projektPO.Forms
             this.nHours.Name = "nHours";
             this.nHours.Size = new System.Drawing.Size(100, 20);
             this.nHours.TabIndex = 84;
+            this.nHours.ValueChanged += new System.EventHandler(this.nHours_ValueChanged);
             // 
             // label6
             // 
@@ -124,6 +126,7 @@ namespace projektPO.Forms
             this.cbEventType.Name = "cbEventType";
             this.cbEventType.Size = new System.Drawing.Size(115, 21);
             this.cbEventType.TabIndex = 82;
+            this.cbEventType.SelectedIndexChanged += new System.EventHandler(this.cbEventType_SelectedIndexChanged);
             // 
             // cbLanguage
             // 
@@ -183,6 +186,7 @@ namespace projektPO.Forms
             this.nWeeks.Name = "nWeeks";
             this.nWeeks.Size = new System.Drawing.Size(100, 20);
             this.nWeeks.TabIndex = 72;
+            this.nWeeks.ValueChanged += new System.EventHandler(this.nWeeks_ValueChanged);
             // 
             // label9
             // 
@@ -256,11 +260,22 @@ namespace projektPO.Forms
             this.cActive.Text = "Aktivní";
             this.cActive.UseVisualStyleBackColor = true;
             // 
+            // lWorkingPoints
+            // 
+            this.lWorkingPoints.AutoSize = true;
+            this.lWorkingPoints.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lWorkingPoints.Location = new System.Drawing.Point(26, 243);
+            this.lWorkingPoints.Name = "lWorkingPoints";
+            this.lWorkingPoints.Size = new System.Drawing.Size(114, 20);
+            this.lWorkingPoints.TabIndex = 94;
+            this.lWorkingPoints.Text = "lWorkingPoints";
+            // 
             // EventForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(578, 272);
+            this.Controls.Add(this.lWorkingPoints);
             this.Controls.Add(this.cActive);
             this.Controls.Add(this.cbEmployee);
             this.Controls.Add(this.label13);
@@ -314,5 +329,6 @@ namespace projektPO.Forms
         private System.Windows.Forms.ComboBox cbEmployee;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.CheckBox cActive;
+        private System.Windows.Forms.Label lWorkingPoints;
     }
 }

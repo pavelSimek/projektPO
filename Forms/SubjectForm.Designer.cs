@@ -57,7 +57,7 @@ namespace projektPO.Forms
             this.nClassSize = new System.Windows.Forms.NumericUpDown();
             this.label12 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.dgEvents = new System.Windows.Forms.DataGridView();
+            this.dgStudyGroups = new System.Windows.Forms.DataGridView();
             this.label13 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nCredits)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nLectureHours)).BeginInit();
@@ -65,12 +65,12 @@ namespace projektPO.Forms
             ((System.ComponentModel.ISupportInitialize)(this.nSeminarHours)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nWeeks)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nClassSize)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgEvents)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgStudyGroups)).BeginInit();
             this.SuspendLayout();
             // 
             // bClear
             // 
-            this.bClear.Location = new System.Drawing.Point(321, 49);
+            this.bClear.Location = new System.Drawing.Point(399, 55);
             this.bClear.Name = "bClear";
             this.bClear.Size = new System.Drawing.Size(103, 23);
             this.bClear.TabIndex = 43;
@@ -80,7 +80,7 @@ namespace projektPO.Forms
             // 
             // bAdd
             // 
-            this.bAdd.Location = new System.Drawing.Point(321, 12);
+            this.bAdd.Location = new System.Drawing.Point(399, 18);
             this.bAdd.Name = "bAdd";
             this.bAdd.Size = new System.Drawing.Size(103, 31);
             this.bAdd.TabIndex = 42;
@@ -346,19 +346,19 @@ namespace projektPO.Forms
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // dgEvents
+            // dgStudyGroups
             // 
-            this.dgEvents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgEvents.Location = new System.Drawing.Point(546, 106);
-            this.dgEvents.Name = "dgEvents";
-            this.dgEvents.Size = new System.Drawing.Size(321, 171);
-            this.dgEvents.TabIndex = 61;
+            this.dgStudyGroups.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgStudyGroups.Location = new System.Drawing.Point(546, 106);
+            this.dgStudyGroups.Name = "dgStudyGroups";
+            this.dgStudyGroups.Size = new System.Drawing.Size(560, 171);
+            this.dgStudyGroups.TabIndex = 61;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label13.Location = new System.Drawing.Point(548, 61);
+            this.label13.Location = new System.Drawing.Point(548, 18);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(319, 42);
             this.label13.TabIndex = 62;
@@ -368,9 +368,9 @@ namespace projektPO.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(879, 289);
+            this.ClientSize = new System.Drawing.Size(1174, 289);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.dgEvents);
+            this.Controls.Add(this.dgStudyGroups);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.nClassSize);
@@ -407,7 +407,7 @@ namespace projektPO.Forms
             ((System.ComponentModel.ISupportInitialize)(this.nSeminarHours)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nWeeks)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nClassSize)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgEvents)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgStudyGroups)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -442,7 +442,7 @@ namespace projektPO.Forms
         private System.Windows.Forms.NumericUpDown nClassSize;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dgEvents;
+        private System.Windows.Forms.DataGridView dgStudyGroups;
         private System.Windows.Forms.Label label13;
     }
 }

@@ -122,6 +122,15 @@ namespace projektPO.Services
                 return db.Query<EventModel>("dbo.ProcEvents", commandType: CommandType.StoredProcedure).ToList();
             }
         }
+
+        public static List<EventModel> EventsByEmployee(int employeeId)
+        {
+            using (var db = OpenSqlConnection())
+            {
+                return db.Query<EventModel>("dbo.ProcEventsByEmployee", new { EmployeeId = employeeId}, commandType: CommandType.StoredProcedure).ToList();
+            }
+        }
+
         public static void EventUpdate(EventModel model)
         {
             using (var db = OpenSqlConnection())
@@ -148,11 +157,11 @@ namespace projektPO.Services
         #endregion
 
         #region StudyGroups
-        public static void SubjectStudyGroups(int Id)
+        public static List<StudyGroupModel> SubjectStudyGroups(int SubjectId)
         {
             using (var db = OpenSqlConnection())
             {
-                db.Query<SubjectModel>("dbo.ProcSubjectStudyGroups", new { Id }, commandType: CommandType.StoredProcedure);
+                return db.Query<StudyGroupModel>("dbo.ProcStudyGroupBySubject", new { SubjectId = SubjectId }, commandType: CommandType.StoredProcedure).ToList();
             }
         }
         public static StudyGroupModel StudyGroup(int Id)
@@ -212,5 +221,14 @@ namespace projektPO.Services
         }
         #endregion
 
+        #region WorkingPointsSelection
+        public static List<WorkingPointEventModel> EmployeeEvents(int EmployeeId)
+        {
+            using (var db = OpenSqlConnection())
+            {
+                return db.Query<WorkingPointEventModel>("dbo.ProcEmployeeEvents", new { EmployeeId = EmployeeId }, commandType: CommandType.StoredProcedure).ToList();
+            }
+        }
+        #endregion
     }
 }
