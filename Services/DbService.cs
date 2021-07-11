@@ -131,6 +131,14 @@ namespace projektPO.Services
             }
         }
 
+        public static EventModel Event(int eventId)
+        {
+            using (var db = OpenSqlConnection())
+            {
+                return db.Query<EventModel>("dbo.ProcEvent", new { EventId = eventId }, commandType: CommandType.StoredProcedure).FirstOrDefault();
+            }
+        }
+
         public static void EventUpdate(EventModel model)
         {
             using (var db = OpenSqlConnection())
@@ -218,6 +226,15 @@ namespace projektPO.Services
             {
                 db.Query<StudyGroupSubjectModel>("dbo.ProcSubjectStudyGroupDelete",  model , commandType: CommandType.StoredProcedure);
             }
+        }
+
+        public static List<StudyGroupSubjectModel> StudyGroupSubject(int? StudyGroupId, int? SubjectId)
+        {
+            using (var db = OpenSqlConnection())
+            {
+                return db.Query<StudyGroupSubjectModel>("dbo.ProcSubjectStudyGroup", new { StudyGroupId = StudyGroupId, SubjectId = SubjectId }, commandType: CommandType.StoredProcedure).ToList();
+            }
+
         }
         #endregion
 

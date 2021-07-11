@@ -55,6 +55,7 @@ namespace projektPO.Forms
             this.cbStudyGroup.Name = "cbStudyGroup";
             this.cbStudyGroup.Size = new System.Drawing.Size(361, 21);
             this.cbStudyGroup.TabIndex = 96;
+            this.cbStudyGroup.SelectedIndexChanged += new System.EventHandler(this.cbStudyGroup_SelectedIndexChanged);
             // 
             // label13
             // 

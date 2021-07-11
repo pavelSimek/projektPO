@@ -69,7 +69,7 @@ namespace projektPO.Forms
             // tbFirstName
             // 
             this.tbFirstName.Location = new System.Drawing.Point(29, 117);
-            this.tbFirstName.MaxLength = 10;
+            this.tbFirstName.MaxLength = 100;
             this.tbFirstName.Name = "tbFirstName";
             this.tbFirstName.Size = new System.Drawing.Size(100, 20);
             this.tbFirstName.TabIndex = 1;
@@ -77,7 +77,7 @@ namespace projektPO.Forms
             // tbLastName
             // 
             this.tbLastName.Location = new System.Drawing.Point(29, 143);
-            this.tbLastName.MaxLength = 10;
+            this.tbLastName.MaxLength = 100;
             this.tbLastName.Name = "tbLastName";
             this.tbLastName.Size = new System.Drawing.Size(100, 20);
             this.tbLastName.TabIndex = 2;

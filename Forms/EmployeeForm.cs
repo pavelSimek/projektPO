@@ -93,7 +93,7 @@ namespace projektPO.Forms
 
         private void bDelete_Click(object sender, EventArgs e)
         {
-            if (_employee == null)
+            if (_employee == null || !_employee.Id.HasValue)
                 return;
             DbService.EmployeeDelete(_employee.Id.Value);
             _parentForm.RefreshEmployeesTable();
@@ -101,7 +101,7 @@ namespace projektPO.Forms
         }
         private bool CheckDuplicity()
         {
-            var employeeDuplicity = DbService.EmployeeExists(_employee.PartyCode, _employee.Id.Value);
+            var employeeDuplicity = DbService.EmployeeExists(_employee.PartyCode, _employee.Id.HasValue? _employee.Id.Value : 0);
             if (employeeDuplicity != null)
             {
                 MessageBox.Show(string.Format("Zaměstnanec s tímto RČ v systému existuje. Jmenuje se: {0} {1}", employeeDuplicity.FirstName, employeeDuplicity.LastName));

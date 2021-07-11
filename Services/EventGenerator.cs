@@ -58,28 +58,7 @@ namespace projektPO.Services
 
         public static EventModel PrepareEvent(SubjectModel subject, Enums.ScheduleEventType eventType)
         {
-            var name = string.Empty;
-            switch (eventType)
-            {
-                case Enums.ScheduleEventType.Lecture:
-                    name = "Přednáška - ";
-                    break;
-                case Enums.ScheduleEventType.Seminar:
-                    name = "Seminář - ";
-                    break;
-                case Enums.ScheduleEventType.Exercise:
-                    name = "Cvičení - ";
-                    break;
-                case Enums.ScheduleEventType.Exam:
-                    name = "Zkošuka - ";
-                    break;
-                case Enums.ScheduleEventType.GradedCredit:
-                    name = "Klasifikovaný žápočet - ";
-                    break;
-                case Enums.ScheduleEventType.Credit:
-                    name = "Zápočet - ";
-                    break;
-            }
+            var name = EventName(eventType);
 
             var eventM = new EventModel()
             {
@@ -221,6 +200,61 @@ namespace projektPO.Services
                     }
                 }
             }
+        }
+
+        public static void GenerateEventsAfterEmployee(EventModel model)
+        {
+            model.Hours = 0;
+            model.Weeks = 0;
+
+            var subjectName = string.Empty;
+            if(model.SubjectID.HasValue)
+                subjectName = DbService.Subject(model.SubjectID.Value).Name;
+
+            
+            if (model.ScheduleEventType == Enums.ScheduleEventType.Lecture)
+            {
+                model.ScheduleEventType = Enums.ScheduleEventType.Exam;
+                model.Name = EventName(model.ScheduleEventType) + subjectName;
+                DbService.EventInsert(model);
+            }
+            else if (model.ScheduleEventType == Enums.ScheduleEventType.Exercise ||
+                model.ScheduleEventType == Enums.ScheduleEventType.Seminar)
+            {
+                model.ScheduleEventType = Enums.ScheduleEventType.Credit;
+                model.Name = EventName(model.ScheduleEventType) + subjectName;
+                DbService.EventInsert(model);
+                model.ScheduleEventType = Enums.ScheduleEventType.GradedCredit;
+                model.Name = EventName(model.ScheduleEventType) + subjectName;
+                DbService.EventInsert(model);
+            }
+        }
+
+        public static string EventName(Enums.ScheduleEventType eventType)
+        {
+            var name = string.Empty;
+            switch (eventType)
+            {
+                case Enums.ScheduleEventType.Lecture:
+                    name = "Přednáška - ";
+                    break;
+                case Enums.ScheduleEventType.Seminar:
+                    name = "Seminář - ";
+                    break;
+                case Enums.ScheduleEventType.Exercise:
+                    name = "Cvičení - ";
+                    break;
+                case Enums.ScheduleEventType.Exam:
+                    name = "Zkošuka - ";
+                    break;
+                case Enums.ScheduleEventType.GradedCredit:
+                    name = "Klasifikovaný žápočet - ";
+                    break;
+                case Enums.ScheduleEventType.Credit:
+                    name = "Zápočet - ";
+                    break;
+            }
+            return name;
         }
     }
 }

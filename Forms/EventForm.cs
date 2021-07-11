@@ -37,9 +37,7 @@ namespace projektPO.Forms
             _subjects.Add(new SubjectModel() { Name = "Předmět", Id = null });
             _subjects.AddRange(DbService.Subjects());
             cbSubject.DataSource = _subjects.Select(x => x.Name).ToList();
-            lWorkingPoints.Text = "Počet bodů za pracovní štítek: " + WorkingPointsCalculator.CalculateEvent(_eventModel).ToString();
-
-
+            lWorkingPoints.Text = "";
             if (_eventModel == null)
                 return;
             cbEmployee.SelectedIndex = _employees.FindIndex(x => x.Id == _eventModel.EmployeeID);
@@ -52,13 +50,17 @@ namespace projektPO.Forms
             nClassSize.Value = _eventModel.NumberOfStudents;
             cActive.Checked = _eventModel.Active;
             bAdd.Text = "Uložit";
+            lWorkingPoints.Text = "Počet bodů za pracovní štítek: " + WorkingPointsCalculator.CalculateEvent(_eventModel).ToString();
         }
         private void bAdd_Click(object sender, EventArgs e)
         {
             if (_eventModel != null)
             {
                 PrepareEvent();
+                var eventM = DbService.Event(_eventModel.Id);
                 DbService.EventUpdate(_eventModel);
+                if(eventM.EmployeeID == null && _eventModel.EmployeeID != null && _eventModel.StudyGroupId != null)
+                    EventGenerator.GenerateEventsAfterEmployee(_eventModel);
             }
             else
             {

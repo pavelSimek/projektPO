@@ -23,6 +23,7 @@ namespace projektPO.Forms
             cbStudyGroup.DataSource = _studyGroups.Select(x => x.ShortName + " - " + x.Name).ToList();
             _subjects = DbService.Subjects();
             cbSubject.DataSource = _subjects.Select(x => x.ShortName + " - " + x.Name).ToList();
+            CheckSubjects();
         }
 
         private void bAdd_Click(object sender, EventArgs e)
@@ -34,8 +35,28 @@ namespace projektPO.Forms
                 SubjectID = _subjects[subjectIndex].Id.Value,
                 StudyGroupID = _studyGroups[studyGroupIndex].Id
             };
-            EventGenerator.GenerateEventsAfterPairing(studyGroupSubject);
-            DbService.StudyGroupSubjectInsert(studyGroupSubject);
+            var subjectExist = DbService.StudyGroupSubject(studyGroupSubject.StudyGroupID, studyGroupSubject.SubjectID);
+            if (subjectExist.Count == 0)
+            {
+                EventGenerator.GenerateEventsAfterPairing(studyGroupSubject);
+                DbService.StudyGroupSubjectInsert(studyGroupSubject);
+            }
+            CheckSubjects();
+            this.Close();
+        }
+
+        private void cbStudyGroup_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CheckSubjects();
+        }
+
+        private void CheckSubjects()
+        {
+            var studyGroupIndex = cbStudyGroup.SelectedIndex;
+            var subjectStudyGroups = DbService.StudyGroupSubject(_studyGroups[studyGroupIndex].Id, null);
+            _subjects = DbService.Subjects();
+            _subjects = _subjects.Where(x => !subjectStudyGroups.Any(y => y.SubjectID == x.Id.Value)).ToList();
+            cbSubject.DataSource = _subjects.Select(x => x.ShortName + " - " + x.Name).ToList();
         }
     }
 }
